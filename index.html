@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>digitale-editorik-historischer-quellen</title>
+
+    <!-- meta information -->
+
+    <meta name="author" content="Thomas Kollatz" />
+    <meta name="author" content="Max Grüntgens" />
+    <meta name="author" content="Dominik Kasper" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+
+    <!-- favicons -->
+    <link rel="shortcut icon" href="resources/img/favicon.png" />
+    <link rel="apple-touch-icon" href="resources/img/apple-touch-icon.png" />
+
+    <!-- CSS reset and grid -->
+    <link href="vendor/normalize/normalize-4.1.1.css" rel="stylesheet" />
+    <link href="vendor/skeleton/skeleton-2.0.4.css" rel="stylesheet" />
+
+    <!-- fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,600,600italic,400italic,700italic,800,800italic&amp;subset=latin,latin-ext"
+      rel="stylesheet" type="text/css" />
+
+    <!-- styles for included libraries -->
+
+    <!-- chartist -->
+    <link rel="stylesheet" href="vendor/chartist/chartist.min-0.9.7.css" />
+
+    <!-- unite gallery -->
+    <link rel="stylesheet" href="vendor/unitegallery/css/unite-gallery.css" type="text/css" />
+
+    <!-- codemirror -->
+    <link rel="stylesheet" href="vendor/codemirror/lib/codemirror.css" />
+
+    <!-- highlight -->
+    <link rel="stylesheet" href="vendor/highlight/styles/default.css" />
+    <link rel="stylesheet" href="resources/css/hljs.linenumbering.css" />
+
+    <!-- swiper -->
+    <link rel="stylesheet" href="vendor/swiper/swiper.min.css" />
+
+    <!-- magnific popup -->
+    <link rel="stylesheet" href="vendor/magnific-popup/magnific-popup-1.1.0.css" />
+
+    <!-- standard presentation styles -->
+    <link href="resources/css/style.css" rel="stylesheet" />
+
+    <!-- custom presentation styles -->
+    <link href="resources/css/custom.css" rel="stylesheet" />
+
+    <!-- js needed in head -->
+
+    <!-- greuler -->
+    <script src="vendor/d3/d3-3.5.6.js"></script>
+    <script src="vendor/cola/cola.v3.min.js"></script>
+    <script src="vendor/greuler/greuler-0.5.5.min.js"></script>
+
+    <!-- html5 dataset shim for IE -->
+    <script src="vendor/impress/html5-dataset.js" type="text/javascript"></script>
+  </head>
+
+  <body>
+    <div class="fallback-message">
+      <p> Your browser <strong>doesn't support the features required</strong> by impress.mod.js, so
+        you are presented with a simplified version of this presentation. </p>
+      <p> For the best experience please use the latest <strong>Chrome</strong>,
+          <strong>Safari</strong> or <strong>Firefox</strong> browser. </p>
+    </div>
+    <div id="impress">
+      <div class="step">
+        <h4 class="down-25"><strong>23. Januar 2018 | Hochschule Mainz</strong></h4>
+        <h1>EpiDoc: TEI XML (1) </h1>
+        <h2 class="red down-25" style="font-size: 42px;">Ein Auszeichnungsstandard für epigraphische
+          Daten und historische Quellen</h2>
+        <h3>Grundlagen und Einführung</h3>
+        <h4>
+          <strong>Slides: </strong>
+          <a href="https://digicademy.github.io/2018-EpiDoc-WS-1"
+            title="View the presentation online">https://digicademy.github.io/2018-EpiDoc-WS-1</a>
+        </h4>
+        <h5>
+          <strong><a href="http://www.adwmainz.de/mitarbeiter/profil/max-gruentgens.html">Max
+              Grüntgens</a></strong> | <a
+            href="http://www.adwmainz.de/mitarbeiter/profil/dominik-kasper.html">Dominik Kasper </a>
+          | <a href="http://orcid.org/0000-0003-1904-1841">Thomas Kollatz</a>
+          <br /><img src="resources/img/Twitter_bird_logo_2012.svg" alt="Twitter"
+            class="twitter-icon" />
+          <a href="https://twitter.com/digicademy" title="Digitale Akademie on Twitter"
+            >@digicademy</a> | <img src="resources/img/Octicons-mark-github.svg" alt="Twitter"
+            class="gh-icon" />
+          <a href="https://github.com/#" title="digicademy on GitHub">digicademy</a> | <a
+            href="https://creativecommons.org/licenses/by/4.0/">CC-BY 4.0</a>
+        </h5>
+      </div>
+      <div class="step">
+        <div class="medium">
+          <h2>Gliederung</h2>
+          <ol class="line-height-one-five">
+            <li>Grundlagen</li>
+            <li>EpiDoc TEI XML Struktur</li>
+            <li>Literatur</li>
+          </ol>
+        </div>
+      </div>
+      <div class="step">
+        <h1 class="red">01</h1>
+        <h2 class="line-height-one-five">Grundlagen </h2>
+      </div>
+      <div class="step">
+        <div class="centered">
+          <h2 class="red">XML – Extensible Markup Language</h2>
+          <h2 class="line-height-one-five">Semantik statt Typographie</h2>
+          <ul class="line-height-one-five">
+            <li>device-independent and system-independent storing and processing of texts in
+              electronic form</li>
+            <li>interchange and communication format </li>
+          </ul>
+          <blockquote> Generalizing from that sense, we define markup, or (synonymously) encoding,
+            as any means of making explicit an interpretation of a text. </blockquote>
+          <p class="right">aus: <a
+              href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/SG.html">A Gentle
+              Introduction to XML</a></p>
+        </div>
+      </div>
+      <div class="step" id="xml">
+        <h2>Extensible Markup Language (XML)</h2>
+        <p>XML trennt Inhalt und Struktur sowie verschiedene Ebenen von Semantik und Metadaten durch
+            <strong>Delimiter und Schlüsselworte</strong> voneinander.</p>
+        <dfn>Delimiter sind <code>&lt; &gt; &amp; ;</code></dfn>
+
+          <h3 class="down-50">Beispiel</h3>
+        <p>
+        <code>&lt;</code> Schlüsselwort <code>&gt;</code>  <code>&amp;</code> Schlüsselwort <code>;</code>
+        </p>
+        <p>Vokabular und Syntax von XML sind <strong>anpassbar</strong> und
+            <strong>erweiterbar</strong>. Mit Schema-Sprachen lässt sich ein
+            <strong>Regelwerk</strong> für projekteigene XML-Dateien erstellen.</p>
+      </div>
+      <!--
+      <div class="step">
+        <p>Delimiter sind:</p>
+        <ul>
+          <li>Spitze Klammern (“Krokodilsklammern”) und Schrägstrich</li>
+          <li>Anführungszeichen</li>
+          <li>Kaufmanns-Und und Semikolon</li>
+        </ul>
+      </div>
+     -->
+      <div class="step">
+        <p>Bei den Schlüsselworten unterscheidet man zwischen:</p>
+        <ul>
+          <li>Elementen: <code>&lt;element&gt;</code>
+            <pre><code class="xml">&lt;letter&gt;
+        &lt;sender&gt;Max Mustermann&lt;/sender&gt;
+        &lt;recipient&gt;Mina Musterfrau&lt;/recipient&gt;
+    &lt;/letter&gt;</code></pre></li>
+          <li>Leeren Elementen: <code>&lt;element /&gt;</code>
+            <pre><code class="xml">&lt;lb n="1"/&gt; Lorem ipsum &lt;lb n="2"/&gt; dolor sit</code></pre></li>
+          <li>Attributen: <code>&lt;element attribut=&quot;attributwert&quot;&gt;</code>
+            <pre><code class="xml">&lt;letter identifier=&quot;xyz123&quot;&gt;
+        &lt;sender identifier=&quot;m0001&quot;&gt;Max Mustermann&lt;/sender&gt;
+        &lt;recipient identifier=&quot;f0001&quot;&gt;Mina Musterfrau&lt;/recipient&gt;
+    &lt;/letter&gt;</code></pre></li>
+          <li>Namespace-Präfixen: <code>&lt;präfix:element&gt;</code>
+            <pre><code class="xml">&lt;root xmlns:prj=&quot;http://url/to/namespace/prj/&quot;&gt;
+        &lt;letter&gt;
+            &lt;sender identifier=&quot;m0001&quot;&gt;Max Mustermann&lt;/sender&gt;
+            &lt;prj:letter&gt;Blackletter Script&lt;/prj:letter&gt;
+        &lt;/letter&gt;
+    &lt;root&gt;</code></pre></li>
+        </ul>
+      </div>
+      <div class="step">
+        <h2>Wohlgeformtheit und Validität</h2>
+        <p>Wenn das XML-Dokument den allgemeinen Syntax-Regeln gehorcht, spricht man von
+            “<strong>Wohlgeformtheit</strong>”. Ist das Dokument zusätzlich konform zu einem Schema,
+          spricht man von “<strong>Validität</strong>”.</p>
+        <p>Durch die Ansetzung eines <strong>Schema-Regelwerks</strong> lassen sich XML-Dokumente
+          sehr einfach in konsistenter Form erstellen, da jederzeit ein <strong>Feedback zur
+            Regelhaftigkeit</strong> des Dokumentes zurückgegeben wird. Viele Text-Editoren greifen
+          zudem auf das zurgundeliegende Schema zurück, um dem Benutzer die im Auszeichnungs-Kontext
+          angebrachten Schlüsselworte per Knopfdruck anzubieten.</p>
+      </div>
+      <div class="step">
+        <p>Die grundlegende Syntax besagt:</p>
+        <ul>
+          <li>Jedes Dokument enhält genau ein Wurzelelement (root element), das alle anderen Elemente des Baumes in sich schließt.</li>
+          <li>Elementnamen sind case sensitive, müssen mit Unterstrichen oder Buchstaben beginnen und dürfen keine Leerstellen enthalten.</li>
+          <li>Jedes geöffnete Element muss geschlossen werden.</li>
+          <li>Es ist keine Überlappung von Elementbereichen erlaubt.</li>
+          <li>Elemente ohne Text-Inhalt dürfen auch als leere Tags geschrieben werden:
+              <code>&lt;date&gt;&lt;/date&gt; => &lt;date /&gt;</code></li>
+          <li>Delimiter-Zeichen sind als Entitäten einzufügen, wenn sie als “normale” Zeichen
+            erscheinen sollen: <code>& => &amp;amp;</code></li>
+        </ul>
+      </div>
+      <div class="step">
+        <h2>Maschinelle Verarbeitung</h2>
+        <p>Die Daten konsistent strukturierter XML-Dokumente können sehr leicht mithilfe von
+          Abfrage- und Transformations-Sprachen <strong>durchsucht</strong>,
+            <strong>akkumuliert</strong> und bspw. <strong>in Ausgabeformate überführt</strong>
+          werden.</p>
+        <p>Auf der <strong>Grundlage konsistenter Datenhaltung</strong> können also <strong>Register
+            und Indices</strong> akkumuliert werde. Zudem lassen sich
+            <strong>Druckvorstufen</strong> für Verlage oder <strong>HTML-Ausgaben</strong> im
+          Rahmen dynamischer Webseiten produzieren.</p>
+      </div>
+      <div class="step">
+        <div class="centered">
+          <h2 class="red">TEI: Text Encoding Initiative</h2>
+          <!-- <h2 class="line-height-one-five">Semantic statt Typographie</h2>
+                    <ul class="line-height-one-five">
+                        <li>device-independent and system-independent storing and processing of
+                            texts in electronic form</li>
+                        <li>interchange and communication format </li>
+                    </ul> -->
+          <blockquote>The Text Encoding Initiative (TEI) is a consortium which collectively develops
+            and maintains a standard for the representation of texts in digital form. Its chief
+            deliverable is a set of Guidelines which specify encoding methods for machine-readable
+            texts, chiefly in the humanities, social sciences and linguistics. </blockquote>
+          <p class="right">aus: <a href="http://www.tei-c.org">http://www.tei-c.org</a></p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="centered">
+          <h2 class="red">Guidelines</h2>
+          <a href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/index.html"><img
+              src="resources/img/tei-c.png" alt="tei guidelines" style="width:75%; height:75%"
+             /></a>
+          <p class="center small">Quelle: <a
+              href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/index.html"
+              >http://www.tei-c.org/release/doc/tei-p5-doc/en/html/index.html</a></p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="centered">
+          <h2 class="red">Special Interest Groups</h2>
+          <a href="http://www.tei-c.org/Activities/SIG/"><img src="resources/img/tei-SIGs.png"
+              style="width:75%; height:75%" /></a>
+        </div>
+        <p class="center small">Quelle: <a href="http://www.tei-c.org/Activities/SIG/"
+            >http://www.tei-c.org/Activities/SIG/</a></p>
+      </div>
+      <div class="step">
+        <div>
+          <h2 class="red">EpiDoc</h2>
+          <h4>Epigraphic Documents in TEI XML | text markup for ancient documents</h4>
+          <blockquote>EpiDoc is an <strong>international</strong>, <strong>collaborative</strong>
+            effort that provides <strong>guidelines</strong> and <strong>tools</strong> for encoding
+            scholarly and educational editions of ancient documents. It uses a subset of the Text
+            Encoding Initiative's standard for the representation of texts in digital form and was
+            developed initially for the publication of <strong>digital editions</strong> of ancient
+            inscriptions (e.g. Inscriptions of Aphrodisias, Vindolanda Tablets). Its domain has
+            expanded to include the publication of papyri and manuscripts (e.g. Papyri.info). It
+            addresses not only the <strong>transcription</strong> and <strong>editorial
+              treatment</strong> of texts themselves, but also the <strong>history</strong> and
+              <strong>materiality</strong> of the objects on which the texts appear (i.e.,
+            manuscripts, monuments, tablets, papyri, and other text-bearing objects).</blockquote>
+        </div>
+        <p class="right small">Quelle: <a href="https://sourceforge.net/p/epidoc/wiki/Home/"
+            >https://sourceforge.net/p/epidoc/wiki/Home/</a></p>
+      </div>
+      <div class="step">
+        <h2>Arbeitsdefinitionen: Inschrift</h2>
+        <blockquote> Inschriften sind Beschriftungen <strong>verschiedener Materialien</strong> – in
+          Stein, Holz, Metall, Leder, Stoff, Email, Glas, Mosaik usw. – die von Kräften und mit
+          Methoden hergestellt sind, die <strong>nicht dem Schreibschul- und Kanzleibetrieb
+            angehören</strong>. </blockquote>
+        <p class="small">Rudolf M. Kloos, Einführung in die Epigraphik des Mittelalters und der
+          frühen Neuzeit, 2. Aufl., Darmstadt 1992, S. 2.</p>
+      </div>
+      <div class="step">
+        <h2>Arbeitsdefinitionen: Inschrift</h2>
+        <blockquote> An epigraph is <strong>any sort of text</strong>, from a single grapheme […] to
+          a lengthy document […]. Epigraphy <strong>overlaps other competences</strong> such as
+          numismatics or palaeography. When compared to books, most inscriptions are short. The
+            <strong>media</strong> and the forms of the <strong>graphemes</strong> are
+            <strong>diverse</strong>: engravings in stone or metal, scratches on rock, impressions
+          in wax, embossing on cast metal, cameo or intaglio on precious stones, painting on ceramic
+          or in fresco [etc.]. <strong>Typically the material is durable</strong>, but the
+          durability might be an accident of circumstance, such as the baking of a clay tablet in a
+          conflagration. </blockquote>
+        <p class="small">Wikipedia contributors, “Epigraphy”, Wikipedia, The Free Encyclopedia, <a
+            href="https://en.wikipedia.org/w/index.php?title=Epigraphy&oldid=820499672"
+            >https://en.wikipedia.org/w/index.php?title=Epigraphy&oldid=820499672</a>
+          (23.1.2018).</p>
+      </div>
+      <div class="step">
+        <div>
+          <h2 class="red">EpiDoc</h2>
+          <h2>Entwicklungsgeschichte – in Kürze</h2>
+          <div class="row">
+            <div class="four columns">
+              <a href="http://www.stoa.org/epidoc/gl/latest/" title="Seite aufrufen">
+                <img class="outline" style="width: 86%"
+                  src="resources/img/stoa-org-epidoc-gl-latest.png" />
+              </a>
+              <p class="small">Quelle: <a href="http://www.stoa.org/epidoc/"
+                  >http://www.stoa.org/epidoc/</a></p>
+            </div>
+            <div class="eight columns">
+              <ul class="line-height-one-five">
+                <li>Subset der TEI</li>
+                <li>seit 1999 kollaborativ entwickelt</li>
+                <li>im Dezember 2017 Release von Schema und Guidelines Version 9.0 </li>
+                <li>Mittlerweile wird das TEI-Subset EpiDoc von zahlreichen – zunehmend auch nicht
+                  primär epigraphischen –  <a
+                    href="http://wiki.digitalclassicist.org/Category:EpiDoc">Projekten</a>
+                  verwendet</li>
+
+                <li>mehr zur Geschichte <a href="https://sourceforge.net/p/epidoc/wiki/About/"
+                    >https://sourceforge.net/p/epidoc/wiki/About/</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="step">
+        <div>
+          <h2 class="red">Beispiele</h2>
+          <a href="http://wiki.digitalclassicist.org/Category:EpiDoc"><img
+              src="resources/img/DigitClass_epiDoc_Projects.png" style="height:66%; width:66%;"
+             /></a>
+          <p class="small">Quelle: <a href="http://wiki.digitalclassicist.org/Category:EpiDoc"
+              >http://wiki.digitalclassicist.org/Category:EpiDoc</a></p>
+          <!-- <ul><li>Slider</li></ul>-->
+        </div>
+      </div>
+      <div class="step">
+        <div>
+          <h1 class="red">02</h1>
+          <h2 class="line-height-one-five">EpiDoc TEI XML Struktur</h2>
+        </div>
+      </div>
+      <div class="step">
+        <h2 class="red">Ein paar Grundregeln</h2>
+        <blockquote class="down-25"> EpiDoc ist – wie die TEI – ein Vorschlag. Das "P" hinter TEI
+          steht für <strong>proposal</strong>. TEI ist kein Zwangskorsett. </blockquote>
+        <blockquote class="substep down-25">Nur Elemente und Attribute nutzen, die für das
+            <strong>Verständnis der Quelle</strong> nötig und nützlich sind. (Das heisst: Nicht
+          alles, was ausgezeichnet werden könnte, muss auch ausgezeichnet werden).</blockquote>
+        <blockquote class="substep down-25">Sinnvoller Einsatz von TEI setzt ein
+            <strong>Konzept</strong> voraus (Editionsrichtlinien, Fragestellung, etc.).</blockquote>
+        <blockquote class="substep down-25">EpiDoc Schema und Struktur ermöglichen geführte,
+            <strong>regelbasierte Erfassung</strong> von (historischen) Texten. </blockquote>
+        <blockquote class="substep down-25">EpiDoc TEI XML nicht (auswendig) lernen! Das
+          dahinterliegende Schema ist selbsterklärend und die <strong>Guidelines bieten
+            Beispiele</strong>! </blockquote>
+      </div>
+      <div class="step">
+        <div>
+          <h2 class="red">Processing Instructions</h2>
+          <h2>Schemavalidierung</h2>
+          <h4>&lt;? … ?&gt;</h4>
+          <pre><code class="linenumbers">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;?xml-model href="http://www.stoa.org/epidoc/schema/latest/tei-epidoc.rng"
+    schematypens="http://relaxng.org/ns/structure/1.0"?&gt;
+&lt;?xml-model href="http://www.stoa.org/epidoc/schema/latest/tei-epidoc.rng"
+    schematypens="http://purl.oclc.org/dsdl/schematron"?&gt;
+</code></pre>
+          <blockquote><code class="red">/schema/latest</code> – validiert gegen das aktuellste
+            Schema <br /><code class="red">/schema/9.0</code> – validiert gegen das versionierte
+            Schema (Release)</blockquote>
+        </div>
+      </div>
+      <div class="step">
+        <div>
+          <h2 class="red">Struktur</h2>
+          <h2>Metadaten – Bilddaten – Textdaten</h2>
+          <pre>
+<code class="linenumbers">&lt;TEI xmlns="http://www.tei-c.org/ns/1.0" xml:space="preserve" xml:lang="en"&gt;
+   &lt;teiHeader&gt;
+     &lt;!-- Metadaten --&gt;
+   &lt;/teiHeader&gt;
+
+   &lt;facsimile&gt;
+      &lt;!-- Informationen zu Bilddaten--&gt;
+   &lt;/facsimile&gt;
+
+   &lt;text&gt;
+       &lt;!-- Textdaten: Edition, Kommentar, Übersetzung, etc. --&gt;
+   &lt;/text&gt;
+&lt;/TEI&gt;
+</code></pre>
+          <!-- <blockquote>Erläuterungen ###</blockquote> -->
+        </div>
+      </div>
+      <div class="step">
+        <h2 class="red">Metadaten</h2>
+        <h4>&lt;teiHeader&gt; – Pflichtelemente </h4>
+        <div>
+          <pre>
+<code class="linenumbers">&lt;teiHeader&gt;
+   &lt;fileDesc&gt;             &lt;!-- mögl. vollständige Beschreibung der Datei --&gt;
+        &lt;titleStmt&gt;       &lt;!-- Titel --&gt;
+        &lt;publicationStmt&gt; &lt;!-- Herausgeber --&gt;
+        &lt;sourceDesc&gt;      &lt;!-- Beschreibung der Quelle --&gt;
+   &lt;/fileDesc&gt;
+&lt;/teiHeader&gt;
+</code>
+</pre>
+          <blockquote> Die Section &lt;sourceDesc&gt; bietet zahlreiche struktierende Elemente zur
+            Beschreibung der Quelle. <ul class="line-height-one-five">
+              <li>&lt;msIdentifier&gt;</li>
+              <li>&lt;physDesc&gt;</li>
+              <li>&lt;history&gt;</li>
+
+
+            </ul>
+          </blockquote>
+          <blockquote><strong>Hinweis</strong> &lt;msDesc&gt; gilt nicht nur für Handschriften,
+            sondern für jedes <strong>other text-bearing object</strong></blockquote>
+        </div>
+      </div>
+      <div class="step">
+        <h2 class="red">Metadaten</h2>
+        <h4>&lt;teiHeader&gt; – Optionale Elemente </h4>
+        <div>
+          <blockquote>
+            <ul class="line-height-one-five">
+              <li>Weitere Auszeichnungsoptionen: <ul>
+                  <li>encodingDesc</li>
+                  <li>profileDesc <ul>
+                      <li>particDesc</li>
+                      <li>langUsage</li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li><a href="http://www.stoa.org/epidoc/gl/latest/app-allsupp.html">List of all
+                  supporting Data Guidelines</a></li>
+
+            </ul>
+          </blockquote>
+        </div>
+      </div>
+      <div class="step">
+        <div>
+          <h2 class="red">Bilddaten</h2>
+          <blockquote>Bilddateien und andere digitale Faksimiles werden – so möglich mit @url – in
+            der Faksimile-Section aufgeführt.</blockquote>
+        </div>
+      </div>
+      <div class="step">
+        <div>
+          <h2 class="red">Textdaten – Edition I</h2>
+          <h4>Textauszeichnung</h4>
+          <ul class="line-height-one-five">
+            <li>Philologie und historische Wissenschaften nutzen zur Kennzeichnung
+                <strong>textueller Phänomene</strong> ausgeklügelte und bewährte
+                <strong>Klammersysteme</strong>. In der Regel werden durch runde, eckige,
+              geschweifte Klammern, sowie durch hoch- und tiefgestellte Zeichen (Punkte, Striche)
+              über, unter oder neben den Buchstaben bzw. Wörtern und Sätzen auf Probleme und
+              Besonderheiten der <strong>Textüberlieferung</strong> hingewiesen. </li>
+            <li>EpiDoc hat diese Notation der Fachwissenschaftler in TEI übertragen.
+                <strong>Hinweis</strong>: Die Textauszeichnung mit EpiDoc TEI XML ermöglicht die
+                <strong>Gewissheit</strong> (@cert | @confidence) und die
+                <strong>Begründung</strong> (@reason) einer textkritischen Entscheidung festzuhalten
+              !</li>
+          </ul>
+        </div>
+      </div>
+      <div class="step">
+        <div>
+          <h2 class="red">Textdaten – Edition II</h2>
+          <h4>Textauszeichnung</h4>
+          <ul class="line-height-one-five">
+            <li>Alle zusammengehörigen Textteile des Inschriftenträgers werden von einem
+                <code>&lt;div type="edition"&gt;</code> geklammert.</li>
+            <li> Die Transkriptionen der einzelnen Textteile stehen jeweils in spezifischen
+                <code>&lt;div type="textpart"</code><code>subtype="pediment"</code>
+              <code>n="A"&gt;&lt;/ab&gt; … &lt;/ab&gt;&lt;/div&gt;</code>. Die Angabe von
+                <code>type="textpart"</code> ist obligatorisch, die Angabe der Attribute
+                <code>subtype</code> und <code>n</code> ist optional. <code>&lt;/ab&gt; …
+                &lt;/ab&gt;</code> klammern Textblöcke als semantisch-neutrale Alternative zu
+                <code>&lt;/p&gt; … &lt;/p&gt;</code>. </li>
+            <li> Die epigraphische Notation wird in XML-Notation nachgebaut. Bsp.: <code>[γδ]</code>
+              wird zu <code>&lt;supplied reason="lost"&gt;γδ&lt;/supplied&gt;</code> (siehe auch <a
+                href="https://sourceforge.net/p/epidoc/code/HEAD/tree/trunk/guidelines/msword/cheatsheet.doc?format=raw"
+                >Leiden Cheatsheet</a>). </li>
+            <li> Kommentarteil, Apparat und Bibliographischer Teil stehen jeweils in eigenen
+                <code>&lt;div&gt;</code>. </li>
+          </ul>
+        </div>
+      </div>
+      <div class="step">
+        <div>
+          <h2 class="red">Textdaten – Edition III</h2>
+          <h4>Beispiel</h4>
+          <pre>
+<code class="linenumbers">&lt;TEI&gt; &lt;!-- Header, Facsimile --&gt;
+  &lt;text&gt;
+   &lt;body&gt;
+       &lt;div type="edition"&gt;
+          &lt;div type="textpart" subtype="pediment" n="1"&gt;
+            &lt;ab&gt;
+              &lt;lb n="1"/&gt; Lorem ipsum &lt;lb n="2"/&gt; dolor sit
+            &lt;/ab&gt;
+          &lt;/div&gt;
+          &lt;div type="textpart" subtype="section" n="2"&gt;
+            &lt;ab&gt;
+              &lt;lb n="1"/&gt; Lorem ipsum &lt;lb n="2"/&gt; dolor sit
+            &lt;/ab&gt;
+          &lt;/div&gt;
+          &lt;div type="textpart" subtype="base" n="3"&gt;
+            &lt;ab&gt;
+              &lt;lb n="1"/&gt; Lorem ipsum &lt;lb n="2"/&gt; dolor sit
+            &lt;/ab&gt;
+          &lt;/div&gt;
+       &lt;/div&gt;
+       &lt;div type="translation"&gt;
+          &lt;p&gt; Translation &lt;/p&gt;
+       &lt;/div&gt;
+       &lt;!-- Commentary, Bibliography --&gt;
+    &lt;/body&gt;
+   &lt;/text&gt;
+&lt;/TEI&gt;
+</code></pre>
+          <!-- <blockquote>Erläuterungen ###</blockquote> -->
+        </div>
+      </div>
+      <div class="step">
+        <div>
+          <h2 class="red">Textdaten – Edition IV</h2>
+          <h4>Beispiel</h4>
+          <pre>
+<code class="linenumbers">&lt;TEI&gt; &lt;!-- Header, Facsimile --&gt;
+  &lt;text&gt;
+    &lt;body&gt;
+       &lt;div type="edition"&gt;
+          &lt;!-- Transkription --&gt;
+       &lt;/div&gt;
+       &lt;div type="translation"&gt;
+          &lt;p&gt; Translation &lt;/p&gt;
+       &lt;/div&gt;
+       &lt;div type="commentary"&gt;
+          &lt;p&gt; Kommentartext &lt;/p&gt;
+       &lt;/div&gt;
+       &lt;div type="apparatus"&gt;
+          &lt;p&gt; Kritischer Apparat &lt;/p&gt;
+       &lt;/div&gt;
+       &lt;div type="bibliography"&gt;
+          &lt;listBibl&gt;
+            &lt;bibl&gt; Bibliographische Angabe &lt;/bibl&gt;
+            &lt;bibl&gt; Bibliographische Angabe &lt;/bibl&gt;
+          &lt;/listBibl&gt;
+       &lt;/div&gt;
+      &lt;/body&gt;
+   &lt;/text&gt;
+&lt;/TEI&gt;
+</code></pre>
+          <!-- <blockquote>Erläuterungen ###</blockquote> -->
+        </div>
+      </div>
+      <div class="step">
+        <div>
+          <h2 class="red">Leidener Klammersystem</h2>
+          <h4>Textauszeichnung</h4>
+          <ul class="line-height-one-five">
+            <li>Basis für traditionelle und digitale Epigraphiker ist das sogenannte <em><a
+                  href="https://de.wikipedia.org/wiki/Leidener_Klammersystem">Leidener
+                  Klammersystem</a></em></li>
+            <li><a href="data/cheatsheet.pdf">EpiDoc Leiden Cheatsheet</a> und korrespondierende <a
+                href="data/large_template_EpiDoc.xml"><code>Beispieldatei</code></a></li>
+            <li><a href="http://www.stoa.org/epidoc/gl/latest/app-epi-krummreypanciera.html">EpiDoc
+                Guidelines</a>: Appendix: Aligning EpiDoc with Panciera 1991 </li>
+            <li>Hilfreich: <a href="http://www.stoa.org/epidoc/gl/latest/app-alltrans.html">List Of
+                All Transcription Guidelines</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="step">
+        <div>
+          <h1 class="red">03</h1>
+          <h2 class="line-height-one-five"> Literatur</h2>
+        </div>
+      </div>
+      <div class="step">
+        <h2>Literatur</h2>
+        <h4>EpiDoc</h4>
+        <ul class="small line-height-one-five">
+          <li><a href="https://sourceforge.net/p/epidoc/wiki/Home/">EpiDoc homepage on
+              SourceForge</a></li>
+          <li><a href="https://sourceforge.net/p/epidoc/wiki/MarkupList/">Markup List</a>: email
+            list for discussions, questions, and help with EpiDoc issues </li>
+          <li><a href="http://www.stoa.org/epidoc/gl/latest/">EpiDoc Guidelines</a></li>
+          <li><a href="https://sourceforge.net/p/epidoc/wiki/Stylesheets/">EpiDoc
+            Stylesheets</a></li>
+        </ul>
+        <h4>Digitale Epigraphik</h4>
+        <ul class="small line-height-one-five">
+          <li>Julia Flanders; Charlotte Roueché: <a
+              href="http://www.stoa.org/epidoc/gl/latest/intro-eps-de.html">Erste Einführung in die
+              Textauszeichnung für Epigraphiker</a>
+          </li>
+          <li>H. Cayless; C.M. Roueché; Tom Elliott; Gabriel Bodard (2009): "Epigraphy in 2017."
+            Digital Humanities Quarterly 3.1. <a
+              href="http://digitalhumanities.org/dhq/vol/3/1/000030/000030.html"
+              >http://digitalhumanities.org/dhq/vol/3/1/000030/000030.html</a></li>
+        </ul>
+        <h4>TEI</h4>
+        <ul class="small line-height-one-five">
+          <li><a href="http://tei-c.org">TEI Website</a></li>
+          <li><a href="https://github.com/TEIC/TEI-Simple">TEI-Simple</a></li>
+          <li><a href="http://teipublisher.com/index.html">TEI Publisher</a></li>
+        </ul>
+        <h4>Download</h4>
+        <ul class="small line-height-one-five">
+          <li>
+            <a href="https://github.com/digicademy/2018-EpiDoc-WS-1">
+              https://github.com/digicademy/2018-EpiDoc-WS-1 </a>
+          </li>
+          <li>Alle Inhalte, Illustrationen und Bilder sind frei zur Weiterverwendung und
+            Modifikation. <br /> Lizenz: <a href="https://creativecommons.org/licenses/by/4.0/"
+              >CC-BY 4.0</a>, <a
+              href="http://www.adwmainz.de/mitarbeiter/profil/max-gruentgens.html">Max
+            Grüntgens</a>, <a href="http://www.adwmainz.de/mitarbeiter/profil/dominik-kasper.html"
+              >Dominik Kasper</a>, <a href="http://orcid.org/0000-0003-1904-1841">Thomas
+            Kollatz</a></li>
+        </ul>
+      </div>
+    </div>
+    <!-- jquery -->
+    <script src="vendor/jquery/jquery-1.11.0.min.js"></script>
+    <!-- unite gallery -->
+    <script type="text/javascript" src="vendor/unitegallery/js/unitegallery.min.js"></script>
+    <script type="text/javascript" src="vendor/unitegallery/themes/tiles/ug-theme-tiles.js"></script>
+    <script type="text/javascript" src="resources/js/unite.gallery.js"></script>
+    <!-- chartist -->
+    <script src="vendor/chartist/chartist.min-0.9.7.js"></script>
+    <script src="resources/js/chartist.charts.js"></script>
+    <!-- codemirror -->
+    <script src="vendor/codemirror/lib/codemirror.js"></script>
+    <script src="vendor/codemirror/addon/edit/matchbrackets.js"></script>
+    <script src="vendor/codemirror/mode/sparql/sparql.js"></script>
+    <script>
+    var editor = CodeMirror.fromTextArea(document.getElementById("sparql"), {
+      mode: "application/sparql-query",
+      matchBrackets: true,
+      lineNumbers: true,
+      viewportMargin: Infinity
+    });
+  </script>
+    <!-- highlight -->
+    <script src="vendor/highlight/highlight.pack-9.3.0.js"></script>
+    <script>
+    hljs.initHighlightingOnLoad();
+  </script>
+    <script src="resources/js/hljs.linenumbering.js"></script>
+    <!-- swiper -->
+    <script src="vendor/swiper/swiper.min.js"></script>
+    <script>
+    var swiper = new Swiper('.swiper-container', {
+      pagination: '.swiper-pagination',
+      paginationClickable: true,
+      nextButton: '.swiper-button-next',
+      prevButton: '.swiper-button-prev',
+      spaceBetween: 30,
+      hashnav: true
+    });
+  </script>
+    <!-- magnific popup -->
+    <script src="vendor/magnific-popup/jquery.magnific-popup.min-1.1.0.js"></script>
+    <script src="resources/js/magnific-popup.lightbox.js"></script>
+    <!-- impress.mod.js -->
+    <script src="vendor/impress/impress.fork.js"></script>
+    <script src="vendor/impress/impress-slidenum.js"></script>
+    <script>
+    var obj = impress();
+    obj.init();
+    initSlideNo(obj);
+  </script>
+  </body>
+
+</html>
