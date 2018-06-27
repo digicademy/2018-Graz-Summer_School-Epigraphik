@@ -83,3 +83,26 @@ button.mfp-close {
 .swiper-container-horizontal {
 	border: 1px solid #ECECEC !important;
 }
+
+.smallcaps {
+   font-variant: small-caps;
+}
+/*
+@font-face {
+  font-family: 'gotische';
+  src: url('../fonts/LOB.Barloesius.otf') format('opentype');
+}
+
+.fraktur-gotische {
+  font-family: gotische, times, serif;
+}
+*/
+
+.fraktur-cook {
+  font-family: 'UnifrakturCook', cursive;
+  font-size: 130px;
+}
+
+.fraktur-maguntia {
+  font-family: 'UnifrakturMaguntia', cursive;
+}
