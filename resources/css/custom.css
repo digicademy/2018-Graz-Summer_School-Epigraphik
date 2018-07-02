@@ -106,3 +106,19 @@ button.mfp-close {
 .fraktur-maguntia {
   font-family: 'UnifrakturMaguntia', cursive;
 }
+
+a.tei-doc-link {
+  color: black !important;
+}
+
+span.delimiters {
+  font-weight: bolder;
+}
+
+span.attribute {
+  font-weight: bolder;
+}
+
+a.tei-doc-link:hover {
+  border-bottom: 2px black dotted;
+}
