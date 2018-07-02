@@ -13,7 +13,11 @@ Array.from(codeList)
 
     const regexAttr = `([A-Za-z]*?)="(.*?)"`;
     const regularExpressionAttr = new RegExp(regexAttr, 'g');
-    const newSnippetAttr = newSnippetEl.replace(regularExpressionAttr, '<span class="attribute">$1</span><span class="delimiters">=</span>"<span class="value">$2</span>"')
+    const newSnippetAttr = newSnippetEl.replace(regularExpressionAttr, '<span class="attribute">$1</span><span class="delimiters">=</span><span class="value">"$2"</span>')
 
-    n.innerHTML = newSnippetAttr;
+    const regexCommStr = `(&lt;\!)(.*?)(&gt;)`;
+    const regularExpressionCommStr = new RegExp(regexCommStr, 'g');
+    const newSnippetCommStr = newSnippetAttr.replace(regularExpressionCommStr, '<span class="comment-string">$1$2$3</span>')
+
+    n.innerHTML = newSnippetCommStr;
   });
