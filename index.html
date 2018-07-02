@@ -60,6 +60,7 @@
   <!-- html5 dataset shim for IE -->
   <script src="vendor/impress/html5-dataset.js" type="text/javascript"></script>
   <link href="https://fonts.googleapis.com/css?family=UnifrakturCook:700|UnifrakturMaguntia" rel="stylesheet">
+
 </head>
 
 <body>
@@ -367,8 +368,8 @@
       <div>
         <h2 class="red">Processing Instructions</h2>
         <h2>Schemavalidierung</h2>
-        <h4><code>&lt;? … ?&gt;</code></h4>
-        <pre><code class="linenumbers">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+        <h4><code class="xml tei-doc-link">&lt;? … ?&gt;</code></h4>
+        <pre><code class="xml tei-doc-link linenumbers">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;?xml-model href="http://www.stoa.org/epidoc/schema/latest/tei-epidoc.rng"
     schematypens="http://relaxng.org/ns/structure/1.0"?&gt;
 &lt;?xml-model href="http://www.stoa.org/epidoc/schema/latest/tei-epidoc.rng"
@@ -382,7 +383,7 @@
         <h2 class="red">Struktur</h2>
         <h2>Metadaten – Bilddaten – Textdaten</h2>
         <pre>
-<code class="linenumbers">&lt;TEI xmlns="http://www.tei-c.org/ns/1.0" xml:space="preserve" xml:lang="en"&gt;
+<code class="xml tei-doc-link linenumbers">&lt;TEI xmlns="http://www.tei-c.org/ns/1.0" xml:space="preserve" xml:lang="en"&gt;
    &lt;teiHeader&gt;
      &lt;!-- Metadaten --&gt;
    &lt;/teiHeader&gt;
@@ -401,10 +402,10 @@
     </div>
     <div class="step">
       <h2 class="red">Metadaten</h2>
-      <h4>&lt;teiHeader&gt; – Pflichtelemente </h4>
+      <h4><code class="xml tei-doc-link">&lt;teiHeader&gt;</code> – Pflichtelemente </h4>
       <div>
         <pre>
-<code class="linenumbers">&lt;teiHeader&gt;
+<code class="xml tei-doc-link linenumbers">&lt;teiHeader&gt;
    &lt;fileDesc&gt;             &lt;!-- mögl. vollständige Beschreibung der Datei --&gt;
         &lt;titleStmt&gt;       &lt;!-- Titel --&gt;
         &lt;publicationStmt&gt; &lt;!-- Herausgeber --&gt;
@@ -413,31 +414,29 @@
 &lt;/teiHeader&gt;
 </code>
 </pre>
-        <blockquote> Die Section &lt;sourceDesc&gt; bietet zahlreiche struktierende Elemente zur Beschreibung der Quelle.
+        <blockquote> Die Section <code class="xml tei-doc-link">&lt;sourceDesc&gt;</code> bietet zahlreiche struktierende Elemente zur Beschreibung der Quelle.
           <ul class="line-height-one-five">
-            <li>&lt;msIdentifier&gt;</li>
-            <li>&lt;physDesc&gt;</li>
-            <li>&lt;history&gt;</li>
-
-
+            <li><code class="xml tei-doc-link">&lt;msIdentifier&gt;</code></li>
+            <li><code class="xml tei-doc-link">&lt;physDesc&gt;</code></li>
+            <li><code class="xml tei-doc-link">&lt;history&gt;</code></li>
           </ul>
         </blockquote>
-        <blockquote><strong>Hinweis</strong> &lt;msDesc&gt; gilt nicht nur für Handschriften, sondern für jedes <strong>other text-bearing object</strong></blockquote>
+        <blockquote><strong>Hinweis</strong> <code class="xml tei-doc-link">&lt;msDesc&gt;</code> gilt nicht nur für Handschriften, sondern für jedes <strong>other text-bearing object</strong></blockquote>
       </div>
     </div>
     <div class="step">
       <h2 class="red">Metadaten</h2>
-      <h4>&lt;teiHeader&gt; – Optionale Elemente </h4>
+      <h4><code class="xml tei-doc-link">&lt;teiHeader&gt;</code> – Optionale Elemente </h4>
       <div>
         <blockquote>
           <ul class="line-height-one-five">
             <li>Weitere Auszeichnungsoptionen:
               <ul>
-                <li>encodingDesc</li>
-                <li>profileDesc
+                <li><code class="xml tei-doc-link">&lt;encodingDesc&gt;</code></li>
+                <li><code class="xml tei-doc-link">&lt;profileDesc&gt;</code>
                   <ul>
-                    <li>particDesc</li>
-                    <li>langUsage</li>
+                    <li><code class="xml tei-doc-link">&lt;particDesc&gt;</code></li>
+                    <li><code class="xml tei-doc-link">&lt;langUsage&gt;</code></li>
                   </ul>
                 </li>
               </ul>
@@ -452,7 +451,7 @@
     <div class="step">
       <div>
         <h2 class="red">Bilddaten</h2>
-        <blockquote>Bilddateien und andere digitale Faksimiles werden – so möglich mit @url – in der Faksimile-Section aufgeführt.</blockquote>
+        <blockquote>Bilddateien und andere digitale Faksimiles werden – so möglich mit @url – in der <code class="xml tei-doc-link">&lt;facsimile&gt;</code>-Sektion aufgeführt.</blockquote>
       </div>
     </div>
     <div class="step">
