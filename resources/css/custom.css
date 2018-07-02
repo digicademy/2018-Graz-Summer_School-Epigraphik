@@ -127,6 +127,7 @@ span.attribute {
 
 code.tei-doc-link {
   color: #abb2bf;
+  background-color: #282c34 !important;
 }
 
 span.element span.value span.hljs-string {
@@ -139,9 +140,4 @@ a.tei-doc-link:hover {
 
 span.comment-string span.hljs-comment {
   color: #778899 !important;
-}
-
-code {
-  background-color: #282c34 !important;
-
 }
