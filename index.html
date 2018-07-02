@@ -478,18 +478,17 @@
         <h4>Textauszeichnung</h4>
         <ul class="line-height-one-five">
           <li>Alle zusammengehörigen Textteile des Inschriftenträgers werden von einem
-            <code>&lt;div type="edition"&gt;</code> geklammert.</li>
+            <code class="xml tei-doc-link">&lt;div type="edition"&gt;</code> geklammert.</li>
           <li> Die Transkriptionen der einzelnen Textteile stehen jeweils in spezifischen
-            <code>&lt;div type="textpart"</code><code>subtype="pediment"</code>
-            <code>n="A"&gt;&lt;/ab&gt; … &lt;/ab&gt;&lt;/div&gt;</code>. Die Angabe von
-            <code>type="textpart"</code> ist obligatorisch, die Angabe der Attribute
-            <code>subtype</code> und <code>n</code> ist optional. <code>&lt;/ab&gt; …
+            <code class="xml tei-doc-link">&lt;div type="textpart" subtype="pediment" n="A"&gt;&lt;/ab&gt; … &lt;/ab&gt;&lt;/div&gt;</code>. Die Angabe von
+            <code class="xml tei-doc-link">type="textpart"</code> ist obligatorisch, die Angabe der Attribute
+            <code class="xml tei-doc-link">subtype</code> und <code class="xml tei-doc-link">n</code> ist optional. <code class="xml tei-doc-link">&lt;ab&gt; …
                 &lt;/ab&gt;</code> klammern Textblöcke als semantisch-neutrale Alternative zu
-            <code>&lt;/p&gt; … &lt;/p&gt;</code>. </li>
-          <li> Die epigraphische Notation wird in XML-Notation nachgebaut. Bsp.: <code>[γδ]</code> wird zu <code>&lt;supplied reason="lost"&gt;γδ&lt;/supplied&gt;</code> (siehe auch <a href="https://sourceforge.net/p/epidoc/code/HEAD/tree/trunk/guidelines/msword/cheatsheet.doc?format=raw">Leiden Cheatsheet</a>).
+            <code class="xml tei-doc-link">&lt;p&gt; … &lt;/p&gt;</code>. </li>
+          <li> Die epigraphische Notation wird in XML-Notation nachgebaut. Bsp.: <code class="xml tei-doc-link">[γδ]</code> wird zu <code class="xml tei-doc-link">&lt;supplied reason="lost"&gt;γδ&lt;/supplied&gt;</code> (siehe auch <a href="https://sourceforge.net/p/epidoc/code/HEAD/tree/trunk/guidelines/msword/cheatsheet.doc?format=raw">Leiden Cheatsheet</a>).
           </li>
           <li> Kommentarteil, Apparat und Bibliographischer Teil stehen jeweils in eigenen
-            <code>&lt;div&gt;</code>. </li>
+            <code class="xml tei-doc-link">&lt;div&gt;</code>. </li>
         </ul>
       </div>
     </div>
