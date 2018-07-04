@@ -111,14 +111,14 @@
       <h2 class="line-height-one-five">Grundlagen </h2>
     </div>
     <div class="step">
-      <div class="centered">
-        <h2 class="red">XML – Extensible Markup Language</h2>
-        <h2 class="line-height-one-five">Semantik statt Typographie</h2>
+      <div>
+        <h2 class="red centered">XML – Extensible Markup Language</h2>
+        <h2 class="line-height-one-five centered">Semantik statt Typographie</h2>
         <ul class="line-height-one-five">
-          <li>device-independent and system-independent storing and processing of texts in electronic form</li>
-          <li>interchange and communication format </li>
+          <li>Geräte- wie Plattform-unabhängige Speicherung und Prozessierung von digitalen Texten</li>
+          <li>Austausch- und Kommunikations-Format</li>
         </ul>
-        <blockquote> Generalizing from that sense, we define markup, or (synonymously) encoding, as any means of making explicit an interpretation of a text. </blockquote>
+        <blockquote> Generalizing from that sense, we define markup, or (synonymously) encoding, as any means of <strong>making explicit an interpretation</strong> of a text. </blockquote>
         <p class="right">aus: <a href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/SG.html">A Gentle
               Introduction to XML</a></p>
       </div>
@@ -149,30 +149,45 @@
      -->
     <div class="step">
       <blockquote>
-        <span class="red smallcaps">Elemente</span> (aka “tags”): <code>&lt;element&gt;</code>
+        <span class="red smallcaps">Elemente</span> (aka “tags”): <code class="xml tei-doc-link">&lt;element&gt;</code>
       </blockquote>
-      <pre><code class="xml linenumbers" >&lt;letter&gt;
-      &lt;sender&gt;
-          &lt;forname&gt;Max&lt;/forname&gt;
-          &lt;surname&gt;Mustermann&lt;/surname&gt;
-      &lt;/sender&gt;
-      &lt;recipient&gt;
-          &lt;forname&gt;Mina&lt;/forname&gt;
-          &lt;surname&gt;Musterfrau&lt;/surname&gt;
-      &lt;/recipient&gt;
-&lt;/letter&gt;
+      <pre><code class="xml tei-doc-link linenumbers" >&lt;correspDesc&gt;
+‖      &lt;correspAction&gt;
+‖      |  &lt;persName&gt;
+‖      |  ¦  &lt;forename&gt;Max&lt;/forename&gt;
+‖      |  ¦  &lt;surename&gt;Mustermann&lt;/surename&gt;
+‖      |  &lt;/persName&gt;
+‖      &lt;/correspAction&gt;
+‖      &lt;correspAction&gt;
+‖      |  &lt;persName&gt;
+‖      |  ¦  &lt;forename&gt;Mina&lt;/forename&gt;
+‖      |  ¦  &lt;surename&gt;Musterfrau&lt;/surename&gt;
+‖      |  &lt;/persName&gt;
+‖      &lt;/correspAction&gt;
+&lt;/correspDesc&gt;
 </code></pre>
       <blockquote>
-        <strong>Sinn</strong> Eindeutige Kennzeichnung und damit Disambiguierung der strukturellen wie semantischen Bestandteile eines Dokumentes.
+        <strong>Sinn</strong> Eindeutige Kennzeichnung und damit Disambiguierung der strukturellen wie semantischen Bestandteile eines Dokumentes:
+        <ul class="small line-height-one-five">
+          <li>
+            Der Bereich <span style="font-style: normal;">‖</span> klammert eine einzige Instanz einer Korrespondenz.
+          </li>
+          <li>
+            Der Bereich | klammert jeweils die Informationen zum Sender (erste Instanz) sowie zum Empfänger (zweite Instanz).
+          </li>
+          <li>
+            Der Bereich ¦ klammert weitere Personendaten.
+          </li>
+        </ul>
       </blockquote>
 
     </div>
 
     <div class="step">
       <blockquote>
-        <span class="red smallcaps">Leere Elemente</span> <code>&lt;element /&gt;</code>
+        <span class="red smallcaps">Leere Elemente</span> <code class="xml tei-doc-link">&lt;element /&gt;</code>
       </blockquote>
-      <pre><code class="xml linenumbers">&lt;lb/&gt; Lorem ipsum
+      <pre><code class="xml tei-doc-link linenumbers">&lt;lb/&gt; Lorem ipsum
 &lt;lb/&gt; dolor sit
 &lt;lb/&gt; adipiscit &lt;handShift/&gt;quid
 &lt;lb/&gt; paretur
@@ -183,11 +198,21 @@
     </div>
 
     <div class="step">
-      <blockquote><span class="red smallcaps">Attribute</span> <code>&lt;element attribut=&quot;attributwert&quot;&gt;</code></blockquote>
-      <pre><code class="xml linenumbers">&lt;letter identifier=&quot;xyz123&quot;&gt;
-      &lt;sender identifier=&quot;m0001&quot;&gt;Max Mustermann&lt;/sender&gt;
-      &lt;recipient identifier=&quot;f0001&quot;&gt;Mina Musterfrau&lt;/recipient&gt;
-&lt;/letter&gt;
+      <blockquote><span class="red smallcaps">Attribute</span> <code class="xml tei-doc-link">&lt;element attribut=&quot;attributwert&quot;&gt;</code></blockquote>
+      <pre><code class="xml tei-doc-link linenumbers">&lt;correspDesc xml:id="unique_letter_id"&gt;
+  &lt;correspAction  type="sent" key="B000001"&gt;
+     &lt;persName sex="male" ref="http://d-nb.info/gnd/118540238"&gt;
+        &lt;forename&gt;Max&lt;/forename&gt;
+        &lt;surename&gt;Mustermann&lt;/surename&gt;
+      &lt;/persName&gt;
+  &lt;/correspAction&gt;
+  &lt;correspAction  type="sent"&gt;
+      &lt;persName sex="female" ref="http://d-nb.info/gnd/118540987"&gt;
+        &lt;forename&gt;Mina&lt;/forename&gt;
+        &lt;surename&gt;Musterfrau&lt;/surename&gt;
+      &lt;/persName&gt;
+  &lt;/correspAction&gt;
+&lt;/correspDesc&gt;
 </code></pre>
       <blockquote>
         <strong>Sinn</strong>: Weitere Spezifizierung bzw. Individualisierung einer semantischen oder strukturellen Information.
@@ -195,8 +220,8 @@
     </div>
 
     <div class="step">
-      <blockquote><span class="red smallcaps">Namespace-Präfixe</span> <code>&lt;präfix:element&gt;</code></blockquote>
-      <pre><code class="xml linenumbers">&lt;root xmlns:prj=&quot;http://url/to/namespace/prj/&quot;&gt;
+      <blockquote><span class="red smallcaps">Namespace-Präfixe</span> <code class="xml tei-doc-link">&lt;pre:fixelement&gt;</code></blockquote>
+      <pre><code class="xml tei-doc-link linenumbers">&lt;root xmlns:prj=&quot;http://url/to/namespace/prj/&quot;&gt;
       &lt;letter&gt;
             &lt;sender identifier=&quot;m0001&quot;&gt;Max Mustermann&lt;/sender&gt;
             &lt;prj:letter&gt;Blackletter Script&lt;/prj:letter&gt;
@@ -217,7 +242,7 @@
     </div>
     <div class="step">
       <h2 class="red">Notations- und Syntaxregeln</h2>
-      <ul>
+      <ul class="line-height-one-five">
         <li>Jedes Dokument enhält <strong>genau ein Wurzelelement</strong> (root element), das alle anderen Elemente des Baumes in sich schließt.</li>
         <li><strong>Regelkonforme Elementnamen</strong> sind case sensitive, müssen mit Unterstrichen oder Buchstaben beginnen und dürfen keine Leerstellen enthalten.
           <ul>
@@ -230,7 +255,7 @@
         </li>
         <li>Jedes <strong>geöffnete</strong> Element muss <strong>geschlossen</strong> werden.</li>
         <li>Es ist <strong>keine Überlappung</strong> von Elementbereichen erlaubt.</li>
-        <li>Elemente ohne Text-Inhalt dürfen auch als selbst schließende bzw. <strong>leere Tags</strong> geschrieben werden:
+        <li>Elemente ohne Text-Inhalt dürfen auch als selbstschließende bzw. <strong>leere Tags</strong> geschrieben werden:
           <ul>
             <li>
               <code>&lt;date&gt;&lt;/date&gt; => &lt;date /&gt;</code></li>
@@ -255,6 +280,12 @@
       </strong> und <strong>Indices</strong> akkumuliert werde. Zudem lassen sich
         <strong>Druckvorstufen</strong> (pandoc, ConTeXt) für Verlage oder <strong>HTML-Ausgaben</strong> im Rahmen dynamischer Webseiten (EFES, eXistDB) produzieren.</p>
     </div>
+
+    <div class="step" id="part_001">
+      <h1 class="red">Standards und die Community</h1>
+      <h2 class="line-height-one-five">Die Text Encoding Intiative und Epigraphic Documents</h2>
+    </div>
+
     <div class="step">
       <div class="centered">
         <h2 class="red">TEI: Text Encoding Initiative</h2>
@@ -264,7 +295,7 @@
                             texts in electronic form</li>
                         <li>interchange and communication format </li>
                     </ul> -->
-        <blockquote>The Text Encoding Initiative (TEI) is a consortium which <strong>collectively</strong> develops and maintains a <strong>standard</strong> for the representation of texts in digital form. Its chief deliverable is a set of <strong>Guidelines</strong>          which specify encoding methods for <strong>machine-readable</strong> [=<strong>processable</strong>] <strong>texts</strong>, chiefly in the humanities, social sciences and linguistics. </blockquote>
+        <blockquote>The Text Encoding Initiative (TEI) is a consortium which <strong>collectively</strong> develops and maintains a <strong>standard</strong> for the representation of texts in digital form. Its chief deliverable is a set of <strong>Guidelines</strong>          which specify encoding methods for <strong>machine-readable</strong> [=<strong>prozessierbare</strong>] <strong>texts</strong>, chiefly in the humanities, social sciences and linguistics. </blockquote>
         <p class="right">aus: <a href="http://www.tei-c.org">http://www.tei-c.org</a></p>
       </div>
     </div>
@@ -289,10 +320,10 @@
       <div>
         <h2 class="red">EpiDoc</h2>
         <h4>Epigraphic Documents in TEI XML | text markup for ancient documents</h4>
-        <blockquote>EpiDoc is an <strong>international</strong>, <strong>collaborative</strong> effort that provides <strong>guidelines</strong> and <strong>tools</strong> for encoding scholarly and educational editions of ancient documents. It uses a <strong>subset</strong>          of the Text Encoding Initiative's standard for the representation of texts in digital form and was developed initially for the publication of <strong>digital editions</strong> of ancient inscriptions (e.g. Inscriptions of Aphrodisias, Vindolanda
-          Tablets). Its domain has expanded to include the publication of papyri and manuscripts (e.g. Papyri.info). It addresses not only the <strong>transcription</strong> and <strong>editorial
+        <blockquote>EpiDoc is an <strong>international</strong>, <strong>collaborative</strong> effort that provides <strong>guidelines</strong> and <strong>tools</strong> for encoding scholarly and educational editions of ancient documents. It uses a <strong>subset</strong>          of the Text Encoding Initiative's standard for the representation of texts in digital form and was developed initially for the publication of <strong>digital editions</strong> of ancient inscriptions […]. Its domain has expanded to include the
+          publication of papyri and manuscripts […]. It addresses not only the <strong>transcription</strong> and <strong>editorial
               treatment</strong> of texts themselves, but also the <strong>history</strong> and
-          <strong>materiality</strong> of the objects on which the texts appear (i.e., manuscripts, monuments, tablets, papyri, and other text-bearing objects).</blockquote>
+          <strong>materiality</strong> of the objects on which the texts appear (i.e., manuscripts, monuments, tablets, papyri, and other <strong>text-bearing objects</strong>).</blockquote>
       </div>
       <p class="right small">Quelle: <a href="https://sourceforge.net/p/epidoc/wiki/Home/">https://sourceforge.net/p/epidoc/wiki/Home/</a></p>
     </div>
@@ -326,9 +357,9 @@
           </div>
           <div class="eight columns">
             <ul class="line-height-one-five">
-              <li>Subset der TEI</li>
-              <li>seit 1999 kollaborativ entwickelt</li>
-              <li>im Dezember 2017 Release von Schema und Guidelines Version 9.0 </li>
+              <li><strong>Subset</strong> der TEI</li>
+              <li>seit 1999 <strong>kollaborativ</strong> entwickelt</li>
+              <li>im Dezember 2017 Release von <strong>Schema</strong> und <strong>Guidelines</strong> Version 9.0 </li>
               <li>Mittlerweile wird das TEI-Subset EpiDoc von zahlreichen – zunehmend auch nicht primär epigraphischen –  <a href="http://wiki.digitalclassicist.org/Category:EpiDoc">Projekten</a> verwendet
               </li>
 
@@ -357,14 +388,19 @@
 
     <div class="step">
       <h2 class="red">Ein paar Grundregeln</h2>
-      <blockquote class="down-25"> EpiDoc ist – wie die TEI – ein Vorschlag. Das "P" hinter TEI steht für <strong>proposal</strong>. TEI ist kein Zwangskorsett. </blockquote>
+      <blockquote class="down-25"> EpiDoc ist ein sich <strong>entwickelnder</strong> Vorschlag. Das "P" hinter TEI steht für <strong>proposal</strong>, die “5” für die <strong>Version</strong>. TEI ist <strong>kein Zwangskorsett</strong>.
+      </blockquote>
+      <blockquote class="substep down-25"> TEI entsteht aus der <strong>epigraphischen Praxis</strong> der Community <strong>für die Community</strong>.
+      </blockquote>
       <blockquote class="substep down-25">Nur Elemente und Attribute nutzen, die für das
-        <strong>Verständnis der Quelle</strong> nötig und nützlich sind. (Das heisst: Nicht alles, was ausgezeichnet werden könnte, muss auch ausgezeichnet werden).</blockquote>
+        <strong>Verständnis der Quelle</strong> nötig und nützlich sind.
+        <!-- (Das heisst: Nicht alles, was ausgezeichnet werden könnte, muss auch ausgezeichnet werden). -->
+      </blockquote>
       <blockquote class="substep down-25">Sinnvoller Einsatz von TEI setzt ein
         <strong>Konzept</strong> voraus (Editionsrichtlinien, Fragestellung, etc.).</blockquote>
       <blockquote class="substep down-25">EpiDoc Schema und Struktur ermöglichen geführte,
         <strong>regelbasierte Erfassung</strong> von (historischen) Texten. </blockquote>
-      <blockquote class="substep down-25">EpiDoc TEI XML nicht (auswendig) lernen! Das dahinterliegende Schema ist selbsterklärend und die <strong>Guidelines bieten
+      <blockquote class="substep down-25">EpiDoc-TEI-XML nicht auswendig lernen! Das dahinterliegende Schema ist leitend und die <strong>Guidelines bieten
             Beispiele</strong>! </blockquote>
     </div>
     <div class="step">
@@ -464,12 +500,12 @@
         <ul class="line-height-one-five">
           <li>Philologie und historische Wissenschaften nutzen zur Kennzeichnung
             <strong>textueller Phänomene</strong> ausgeklügelte und bewährte
-            <strong>Klammersysteme</strong>. In der Regel werden durch runde, eckige, geschweifte Klammern, sowie durch hoch- und tiefgestellte Zeichen (Punkte, Striche) über, unter oder neben den Buchstaben bzw. Wörtern und Sätzen auf Probleme und Besonderheiten
-            der <strong>Textüberlieferung</strong> hingewiesen. </li>
+            <strong>Klammersysteme</strong>. In der Regel werden durch runde, eckige, geschweifte Klammern, sowie durch hoch- und tiefgestellte Zeichen (Punkte, Striche) über, unter oder neben den Buchstaben bzw. Wörtern und Sätzen auf Herausforderungen
+            und Besonderheiten der <strong>Textüberlieferung</strong> hingewiesen. </li>
           <li>EpiDoc hat diese Notation der Fachwissenschaftler in TEI übertragen.
             <strong>Hinweis</strong>: Die Textauszeichnung mit EpiDoc TEI XML ermöglicht die
             <strong>Gewissheit</strong> (@cert | @confidence) und die
-            <strong>Begründung</strong> (@reason) einer textkritischen Entscheidung festzuhalten !
+            <strong>Begründung</strong> (@reason) einer textkritischen Entscheidung festzuhalten (siehe auch <a href="https://digicademy.github.io/2018-Graphentechnologie/#/step-1" title="Vortrag zu “Modellierung von Zweifel und Unsicherheit” in der TEI und in Graphen (2018).">hier</a>)!
           </li>
         </ul>
       </div>
@@ -544,7 +580,10 @@
        &lt;div type="translation"&gt;
           &lt;p&gt; Translation &lt;/p&gt;
        &lt;/div&gt;
-       &lt;div type="commentary"&gt;
+       &lt;div type="commentary" subtype="description"&gt;
+          &lt;p&gt; Beschreibungstext &lt;/p&gt;
+       &lt;/div&gt;
+       &lt;div type="commentary" subtype="commentary"&gt;
           &lt;p&gt; Kommentartext &lt;/p&gt;
        &lt;/div&gt;
        &lt;div type="apparatus"&gt;
@@ -563,6 +602,229 @@
         <!-- <blockquote>Erläuterungen ###</blockquote> -->
       </div>
     </div>
+
+
+    <div class="step">
+      <div>
+        <h2 class="red">Textkonstitution I</h2>
+        <h4>Graphischer Befund</h4>
+        <pre>
+<code class="xml tei-doc-link linenumbers">Unclear:
+    &lt;unclear&gt;lor&lt;/unclear&gt;em
+
+Supraline:
+    &lt;hi rend="supraline"&gt;lorem&lt;/hi&gt;
+
+Ligature:
+    &lt;hi rend="ligature"&gt;ab&lt;/hi&gt;cd&lt;hi rend="ligature"&gt;ef&lt;/hi&gt;
+
+Erasure:
+    &lt;del rend="erasure"&gt;ab&lt;/del&gt;
+
+Erased and lost:
+    &lt;del rend="erasure"&gt;
+      &lt;gap reason="lost" quantity="5" unit="character"/&gt;
+    &lt;/del&gt;
+
+Overstrike:
+    &lt;add place="overstrike"&gt;abc&lt;/add&gt;
+
+Added above:
+    &lt;add place="above"&gt;γδ&lt;/add&gt;
+
+Added below:
+    &lt;add place="below"&gt;γδ&lt;/add&gt;
+</code></pre>
+        <!-- <blockquote>Erläuterungen ###</blockquote> -->
+      </div>
+    </div>
+
+
+    <div class="step">
+      <div>
+        <h2 class="red">Textkonstitution II</h2>
+        <h4>Editorische Hinzufügungen</h4>
+        <pre>
+<code class="xml tei-doc-link linenumbers">Supplied (Lost):
+    &lt;supplied reason="lost"&gt;γδ&lt;/supplied&gt;
+
+Supplied (lost, low certainty):
+    &lt;supplied reason="lost" cert="low"&gt;γδ&lt;/supplied&gt;
+
+Supplied (omitted):
+    &lt;supplied reason="omitted"&gt;γδ&lt;/supplied&gt;
+
+Supplied (subaudible):
+    &lt;supplied reason="subaudible"&gt;lorem&lt;/supplied&gt;
+
+Supplied (parallel):
+    &lt;supplied reason="undefined" evidence="parallel"&gt;lorem&lt;/supplied&gt;
+
+Supplied (previous editor):
+    &lt;supplied reason="undefined" evidence="previouseditor"&gt;lorem&lt;/supplied&gt;
+</code></pre>
+        <!-- <blockquote>Erläuterungen ###</blockquote> -->
+      </div>
+    </div>
+
+
+    <div class="step">
+      <div>
+        <h2 class="red">Textkonstitution IIIa</h2>
+        <h4>Lacunae I</h4>
+        <pre>
+<code class="xml tei-doc-link linenumbers">Gap or lacuna (lost, character):
+    &lt;gap reason="lost" quantity="15" unit="character"/&gt;
+
+Gap or lacuna (lost, unknown, character):
+    &lt;gap reason="lost" extent="unknown" unit="character"/&gt;
+
+Gap (lost, at least–at most, character):
+    &lt;gap reason="lost" atLeast="5" atMost="7" unit="character"/&gt;
+
+Gap (lost, low precision, character):
+    &lt;gap reason="lost" quantity="26" unit="character" precision="low"/&gt;
+
+Gap (lost, line):
+    &lt;gap reason="lost" quantity="1" unit="line"/&gt;
+
+Gap (lost, unknown, line):
+    &lt;gap reason="lost" extent="unknown" unit="line"/&gt;
+</code></pre>
+        <!-- <blockquote>Erläuterungen ###</blockquote> -->
+      </div>
+    </div>
+
+
+    <div class="step">
+      <div>
+        <h2 class="red">Textkonstitution IIIb</h2>
+        <h4>Lacunae II</h4>
+        <pre>
+<code class="xml tei-doc-link linenumbers">Gap (possibly lost, line):
+    &lt;gap reason="lost" quantity="1" unit="line"&gt;
+      &lt;certainty match=".." locus="name"/&gt;
+    &lt;/gap&gt;
+
+Gap (possibly lost, unknown, line):
+    &lt;gap reason="lost" extent="unknown" unit="line"&gt;
+      &lt;certainty match=".." locus="name"/&gt;
+    &lt;/gap&gt;
+
+Gap (omitted, unknown, character):
+    &lt;gap reason="omitted" extent="unknown" unit="character"/&gt;
+
+Gap (omitted, unknown, line):
+    &lt;gap reason="omitted" extent="unknown" unit="line"/&gt;
+
+Gap (illegible, character):
+    &lt;gap reason="illegible" unit="character" quantity="5"/&gt;
+</code></pre>
+        <!-- <blockquote>Erläuterungen ###</blockquote> -->
+      </div>
+    </div>
+
+
+
+    <div class="step">
+      <div>
+        <h2 class="red">Textkonstitution IV</h2>
+        <h4>Editorische Eingriffe</h4>
+        <pre>
+<code class="xml tei-doc-link linenumbers">Words omitted by editor for brevity:
+    &lt;gap reason="ellipsis"/&gt;
+
+Superfluous letters:
+    &lt;surplus&gt;αβγ&lt;/surplus&gt;
+
+Clear but incomprehensible:
+    &lt;orig&gt;αββα&lt;/orig&gt;
+
+Correction by editor:
+    &lt;choice&gt;
+      &lt;corr&gt;αβ&lt;/corr&gt;
+      &lt;sic&gt;βα&lt;/sic&gt;
+    &lt;/choice&gt;
+
+Regularized by editor:
+    &lt;choice&gt;
+      &lt;reg&gt;ἐκ&lt;/reg&gt;
+      &lt;orig&gt;ἐγ&lt;/orig&gt;
+    &lt;/choice&gt;
+</code></pre>
+        <!-- <blockquote>Erläuterungen ###</blockquote> -->
+      </div>
+    </div>
+
+    <div class="step">
+      <div>
+        <h2 class="red">Textkonstitution V</h2>
+        <h4>Auflösung von Kürzungen</h4>
+        <pre>
+<code class="xml tei-doc-link linenumbers">Expansion of abbreviation:
+    &lt;expan&gt;
+      &lt;abbr&gt;α&lt;/abbr&gt;
+      &lt;ex&gt;βγ&lt;/ex&gt;
+    &lt;/expan&gt;
+
+Tentative expansion of abbreviation:
+    &lt;expan&gt;
+      &lt;abbr&gt;α&lt;/abbr&gt;
+      &lt;ex cert="low"&gt;βγ&lt;/ex&gt;
+    &lt;/expan&gt;
+
+Incomplete expansion:
+    &lt;expan&gt;α&lt;ex&gt;βγ&lt;/ex&gt;&lt;/expan&gt;
+
+Abbreviation (expansion unknown):
+    &lt;abbr&gt;αβ&lt;/abbr&gt;
+
+Expansion of symbol:
+    &lt;expan&gt;
+      &lt;ex&gt;αβ&lt;/ex&gt;
+    &lt;/expan&gt;
+</code></pre>
+        <!-- <blockquote>Erläuterungen ###</blockquote> -->
+      </div>
+    </div>
+
+
+    <div class="step">
+      <div>
+        <h2 class="red">Textkonstitution VI</h2>
+        <h4>Leerstellen, Zahlen, Zahlzeichen, Symbole</h4>
+        <pre>
+<code class="xml tei-doc-link linenumbers">Note:
+    &lt;note&gt;!&lt;/note&gt;, &lt;note&gt;sic&lt;/note&gt;, &lt;note&gt;e.g.&lt;/note&gt;
+
+Space left on stone:
+    &lt;space quantity="1" unit="character"/&gt;
+
+Space on stone, extent unknown:
+    &lt;space extent="unknown" unit="character"/&gt;
+
+Numeral (Roman):
+    &lt;num value="12"&gt;ⅩⅡ&lt;/num&gt; 
+
+Numeral (Greek):
+    &lt;num value="1"&gt;α&lt;/num&gt;
+
+Numeral (Greek):
+    &lt;num value="1000"&gt;α&lt;/num&gt;
+
+Symbol:
+    &lt;g type="leaf"/&gt;
+
+Symbol:
+    &lt;g type="bear"/&gt;
+</code></pre>
+        <!-- <blockquote>Erläuterungen ###</blockquote> -->
+      </div>
+    </div>
+
+
+
+
     <div class="step">
       <div>
         <h2 class="red">Leidener Klammersystem</h2>
@@ -586,7 +848,31 @@
       </div>
     </div>
     <div class="step">
-      <h2>Literatur</h2>
+      <h2>Handouts und allgemeine Literatur zum digitalen Arbeiten</h2>
+      <h4>Handouts</h4>
+      <ul class="small line-height-one-five">
+        <li>
+          Blib
+        </li>
+      </ul>
+      <h4>Digitales Arbeiten</h4>
+      <ul class="small line-height-one-five">
+        <li>
+          Jannidis F. (2017) <a href="https://link.springer.com/chapter/10.1007/978-3-476-05446-3_5">Zahlen und Zeichen</a>. In: Jannidis F., Kohle H., Rehbein M. (eds) Digital Humanities. J.B. Metzler, Stuttgart.
+        </li>
+        <li>
+          Jannidis F. (2017) <a href="https://link.springer.com/chapter/10.1007/978-3-476-05446-3_7">Grundlagen der Datenmodellierung</a>. In: Jannidis F., Kohle H., Rehbein M. (eds) Digital Humanities. J.B. Metzler, Stuttgart.
+        </li>
+        <li>
+          Vogeler G., Sahle P. (2017) <a href="https://link.springer.com/chapter/10.1007/978-3-476-05446-3_9">XML</a>. In: Jannidis F., Kohle H., Rehbein M. (eds) Digital Humanities. J.B. Metzler, Stuttgart.
+        </li>
+        <li>
+          Sahle P. (2017) <a href="https://link.springer.com/chapter/10.1007/978-3-476-05446-3_17">Digitale Edition</a>. In: Jannidis F., Kohle H., Rehbein M. (eds) Digital Humanities. J.B. Metzler, Stuttgart.
+        </li>
+      </ul>
+    </div>
+    <div class="step">
+      <h2>Literatur zur digitalen Epigraphik</h2>
       <h4>EpiDoc</h4>
       <ul class="small line-height-one-five">
         <li><a href="https://sourceforge.net/p/epidoc/wiki/Home/">EpiDoc homepage on

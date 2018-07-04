@@ -7,7 +7,7 @@ Array.from(codeList)
   .forEach((n) => {
     const text = n.textContent.replace(/</g, "&lt;")
       .replace(/>/g, "&gt;");
-    const regexEl = `&lt;(\/{0,1})([-A-Za-z]*?)(\\s.*?.*?){0,1}(\/{0,1})&gt;`;
+    const regexEl = `&lt;(\/{0,1})([-A-Za-z:]*?)(\\s.*?.*?){0,1}(\/{0,1})&gt;`;
     const regularExpressionEl = new RegExp(regexEl, 'g');
     const newSnippetEl = text.replace(regularExpressionEl, "<span class='delimiters'>&lt;$1</span><span class='element'><a class='tei-doc-link' href='http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-$2.html'>$2</a>$3</span><span class='delimiters'>$4&gt;</span>");
 
