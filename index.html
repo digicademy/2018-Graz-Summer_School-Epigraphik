@@ -115,6 +115,9 @@
         <h2 class="red centered">XML – Extensible Markup Language</h2>
         <h2 class="line-height-one-five centered">Semantik statt Typographie</h2>
         <ul class="line-height-one-five">
+          <li>
+            Erweiterbar und anpassbar.
+          </li>
           <li>Geräte- wie Plattform-unabhängige Speicherung und Prozessierung von digitalen Texten</li>
           <li>Austausch- und Kommunikations-Format</li>
         </ul>
@@ -440,6 +443,12 @@
       </div>
     </div>
 
+    <div class="step" id="part_002">
+      <div>
+        <h1 class="red">Exkurs</h1>
+        <h2 class="line-height-one-five">Metadaten, Normdaten und Linked Open Data</h2>
+      </div>
+    </div>
 
     <div class="step">
       <h2 class="red">Metadaten</h2>
@@ -497,8 +506,103 @@
       </ul>
     </div>
 
+    <div class="step ">
+      <h2 class="red">Normdateien und kontrollierte Vokabulare (Auswahl)</h2>
+      <ul class="line-height-one-five medium">
+        <li>Geographika
+          <ul class="small line-height-one-five medium">
+            <li>
+              <a href="http://www.getty.edu/vow/TGNServlet?english=Y&amp;find=Frankfurt&amp;place=inhabited+place&amp;page=1&amp;nation=">Thesaurus of Geographic Names </a> [TGN] kennt Frankfurt am Main als <a href="http://vocab.getty.edu/tgn/7005293"><code>http://vocab.getty.edu/tgn/7005293</code></a>;
+              <a href="http://www.geonames.org/">GeoNames</a> als <a href="http://www.geonames.org/3220968"><code>http://www.geonames.org/3220968</code></a>
+            </li>
+            <li>Historische Geographika– <a href="http://pleiades.stoa.org/places/678401">Pleiades</a>
+            </li>
+
+
+            <li>Spezifischere Geographika bspw. Judaistik/Hebraistik – <a href="https://geo-kima.org">Kima
+                                  Historical Gazeteer</a>
+            </li>
+          </ul>
+        </li>
+
+        <li>Personen
+          <ul class="small line-height-one-five medium">
+            <li>
+              <a href="http://d-nb.info/gnd/11879132X"></a>German National Library Identificators [GND] – Beispiel der Einbindung in das eigene Angebot über <a href="http://www.dnb.de/DE/Wir/Projekte/Abgeschlossen/entityFacts.html">DNB Entity Facts und Culture Graph</a>:
+              <a href="http://www.steinheim-institut.de/cgi-bin/epidat?id=ffb-80-1">Epidat</a>, <a href="https://www.deutsche-digitale-bibliothek.de/entity/11879132X">Deutsche Digitale Bibliothel</a>, <a href="http://hub.culturegraph.org/entityfacts/11879132X">[🤖]</a>
+            </li>
+            <li>
+              <a href="https://viaf.org/">Virtual International Authority File</a>
+            </li>
+          </ul>
+        </li>
+
+
+        <li>Physische Form | Symbole | Materialien
+          <ul class="line-height-one-five">
+
+
+            <li><a href="http://www.getty.edu/vow/AATFullDisplay?find=headstone&amp;logic=AND&amp;note=&amp;subjectid=300266769">Arts and Architecture Thesaurus</a> [AAT] kennt Grabstein als <a href="http://vocab.getty.edu/aat/300266769"><code>http://vocab.getty.edu/aat/300266769</code></a></li>
+            <li><a href="http://www.iconclass.org/rkd/25G41%28LILY%29/">Iconclass</a> – <q>a multilingual classification system for cultural
+                                    content</q> – kennt Lilien als <code><a href="http://www.iconclass.org/rkd/25G41%28LILY%29/">http://www.iconclass.org/rkd/25G41%28LILY%29/</a></code> </li>
+            <li><a href="https://www.eagle-network.eu/resources/vocabularies/">EAGLE</a> [The Europeana network of Ancient Greek and Latin Epigraphy] kennt Eisen als <a href="https://www.eagle-network.eu/voc/material/lod/111">https://www.eagle-network.eu/voc/material/lod/111</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+
     <div class="step">
-      <h2 class="red">Metadaten</h2>
+      <h2 class="red">Und was macht man dann damit …? Linked Open Data!</h2>
+      <ul class="line-height-one-five">
+        <li>
+          <a href="https://digicademy.github.io/2016-agehum-lodworkshop/#/step-1">LOD auf Basis von Normdaten</a> ermöglicht automatische Anreicherung, semantische Verknüpfung und komplexe Analyse von Forschungsdatensets:
+          <ul class="line-height-one-five">
+            <li class="substep">
+              Dritte können meine digitalen Ressourcen finden und nachnutzen.
+            </li>
+            <li class="substep">
+              Ich gewähre freien, strukturierten und maschinenlesbaren Zugriff (ggf. zu eigenen Analysezwecken).
+            </li>
+            <li class="substep">
+              Ich biete eine standardisierte Bereitstellung der Informationen nach W3C- und ISO-Standards.
+            </li>
+            <li class="substep">
+              Ich stelle meine Daten bewusst in einen größeren Kontext und löse Datensilos auf.
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <div class="step">
+      <h2 class="red">LOD am Beispiel von GeoNames-Normdaten und Nomisma</h2>
+      <p>
+        Ansatz: Man sucht Information zu den in der Spät-Antike in Mainz emittierten Münzen, zu den Nominalen und zum Aussteller: <a href="http://nomisma.org/sparql">Nomisma-SPARQL-Endpoint</a>.
+      </p>
+      <pre><code class="sparql-query linenumbers">PREFIX nmo:	&lt;http://nomisma.org/ontology#&gt;
+PREFIX skos:	&lt;http://www.w3.org/2004/02/skos/core#&gt;
+
+SELECT ?mint ?label ?denomlabel ?authlabel ?matches
+WHERE {
+  ?mint skos:closeMatch &lt;http://www.geonames.org/2874225&gt; .
+  ?type nmo:hasMint ?mint .
+  ?type skos:prefLabel ?label FILTER(langMatches(lang(?label), "en")) .
+  ?type nmo:hasDenomination ?denomination .
+  ?denomination skos:prefLabel ?denomlabel FILTER(langMatches(lang(?denomlabel), "en")) .
+  ?type nmo:hasAuthority ?authority .
+  ?authority skos:prefLabel ?authlabel FILTER(langMatches(lang(?authlabel), "en")) .
+  ?authority skos:exactMatch ?matches FILTER regex(STR(?matches), 'viaf','i') .
+}
+LIMIT 100
+</code>  </pre>
+      </li>
+      </ul>
+    </div>
+
+
+    <div class="step">
+      <h2 class="red">Metadaten innerhalb von TEI und EpiDoc</h2>
       <h4><code class="xml tei-doc-link">&lt;teiHeader&gt;</code> – Pflichtelemente </h4>
       <div>
         <pre>
@@ -523,7 +627,7 @@
     </div>
 
     <div class="step">
-      <h2 class="red">Metadaten</h2>
+      <h2 class="red">Weitere Metadaten-Elemente</h2>
       <h4><code class="xml tei-doc-link">&lt;teiHeader&gt;</code> – Optionale Elemente </h4>
       <div>
         <blockquote>
@@ -910,13 +1014,7 @@ Symbol:
       </div>
     </div>
     <div class="step">
-      <h2>Handouts und allgemeine Literatur zum digitalen Arbeiten</h2>
-      <h4>Handouts</h4>
-      <ul class="small line-height-one-five">
-        <li>
-          Blib
-        </li>
-      </ul>
+      <h3 class="red">Allgemeine Literatur zum digitalen Arbeiten und zum Schwerpunkt Linked Open Data</h3>
       <h4>Digitales Arbeiten</h4>
       <ul class="small line-height-one-five">
         <li>
@@ -932,9 +1030,22 @@ Symbol:
           Sahle P. (2017) <a href="https://link.springer.com/chapter/10.1007/978-3-476-05446-3_17">Digitale Edition</a>. In: Jannidis F., Kohle H., Rehbein M. (eds) Digital Humanities. J.B. Metzler, Stuttgart.
         </li>
       </ul>
+      <h4>Linked Open Data</h4>
+      <ul class="small line-height-one-five">
+        <li>
+          Pascal Hitzler et. al. (2008) Semantic Web. Grundlagen.Springer, Berlin.
+        </li>
+        <li>
+          Leif Isaksen (2011) <a href="https://eprints.soton.ac.uk/206421/">Archaeology and the Semantic Web</a>. University of Southampton, School of Electronics and Computer Science. Southhampton.
+        </li>
+        <li>
+          Max Grüntgens, Torsten Schrade (2016) <a href="http://ceur-ws.org/Vol-1608/paper-07.pdf">Data repositories in the Humanities and the
+  Semantic Web: modelling, linking, visualising.</a> In: 1st Workshop on Humanities in the Semantic Web (WHiSe 2016). Anissaras.
+        </li>
+      </ul>
     </div>
     <div class="step">
-      <h2>Literatur zur digitalen Epigraphik</h2>
+      <h3 class="red">Literatur zur digitalen Epigraphik</h3>
       <h4>EpiDoc</h4>
       <ul class="small line-height-one-five">
         <li><a href="https://sourceforge.net/p/epidoc/wiki/Home/">EpiDoc homepage on
@@ -968,6 +1079,23 @@ Symbol:
             Kollatz</a></li>
       </ul>
     </div>
+
+    <div class="step">
+      <h3 class="red">Handouts und weitere Informationen</h3>
+      <h4>Handouts</h4>
+      <ul class="small line-height-one-five">
+        <li>
+          xxx
+        </li>
+      </ul>
+      <h4>Lizenzinformationen</h4>
+      <ul class="small line-height-one-five">
+        <li>
+          xxx
+        </li>
+      </ul>
+    </div>
+
   </div>
   <!-- jquery -->
   <script src="vendor/jquery/jquery-1.11.0.min.js"></script>
