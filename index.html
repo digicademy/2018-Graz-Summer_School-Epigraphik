@@ -439,6 +439,64 @@
         <!-- <blockquote>Erläuterungen ###</blockquote> -->
       </div>
     </div>
+
+
+    <div class="step">
+      <h2 class="red">Metadaten</h2>
+      <blockquote>Why store <strong>data about an object</strong>, when you have the object itself? Because <strong>without data</strong> about the objects contained in a space, any sufficiently complex space is <strong>indistinguishable from chaos</strong>.</blockquote>
+      <p class="x-small right">Pomerantz 2017</p>
+      <ul class="line-height-one-five">
+        <h4 class="red">Kleine Merksätze zur Metadaten-Vergabe:</h4>
+        <li>
+          Ein <strong>Metadaten-Schema</strong> und ein mindesten projektweites <strong>Vergabe-Konzept</strong> verwenden; Nutzung<a href="http://digitale-wissenschaft.de/wissensblog/normdaten-was-sie-koennen-wo-du-sie-findest/">[↗]</a> von <strong>Normdaten</strong>          und <strong>Authority Files</strong>.
+        </li>
+        <li>
+          Nicht nur Besonderheiten angeben, sondern alle Zugehörigkeiten explizit machen.
+        </li>
+        <li>
+          <strong>Keine</strong> Datei- oder Sammlungsspezifischen <strong>impliziten Annahmen</strong> in den Metadaten anwenden (e.g. “Jede Inschrift ohne Trägerangabe ist ein Grabkreuz.”).
+        </li>
+      </ul>
+    </div>
+
+    <div class="step">
+      <h2 class="red">Normdaten</h2>
+      <ul class="line-height-one-five">
+        <h4 class="red">Was sind Normdateien</h4>
+        <li>
+          <strong>Normierte</strong> und <strong>kuratierte</strong> Sammlungen von <strong>Informationseinheiten</strong> im Kontext eines spezifischen <strong>Fachgebietes</strong>, e.g. über Personen oder Geographika, in mensch- (👩) und maschinen-lesbarer
+          (🤖) Form (Stichwort <strong>content negotiation</strong>).
+        </li>
+        <li>
+          Die einzelnen Informationseinheiten (“Entitäten”) <strong>disambiguieren</strong> mittels <strong>eindeutiger Bezeichner</strong>, e.g. Beispiel GND-Referenzummer:
+          <ul class="small line-height-one-five">
+            <li>
+              Entität_1 (⇌ Projektinterne Referenz) ⇌ Nr. 117602388<a href="	http://d-nb.info/gnd/117602388">[👩]</a><a href="https://d-nb.info/gnd/130063274/about/lds">[🤖]</a> ⇌ Attribute:
+              <ul class="small line-height-one-five">
+                <li>
+                  Name: Max Müller
+                </li>
+                <li>
+                  Beruf: Orientalist
+                </li>
+              </ul>
+            </li>
+            <li>
+              Entität_2 (⇌ Projektinterne Referenz) ⇌ Nr. 130063274<a href="	http://d-nb.info/gnd/130063274">[👩]</a><a href="https://d-nb.info/gnd/130063274/about/lds">[🤖]</a> ⇌ Attribute:
+              <ul class="small line-height-one-five">
+                <li>
+                  Name: Max Müller
+                </li>
+                <li>
+                  Beruf: Jurist
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
     <div class="step">
       <h2 class="red">Metadaten</h2>
       <h4><code class="xml tei-doc-link">&lt;teiHeader&gt;</code> – Pflichtelemente </h4>
@@ -463,6 +521,7 @@
         <blockquote><strong>Hinweis</strong> <code class="xml tei-doc-link">&lt;msDesc&gt;</code> gilt nicht nur für Handschriften, sondern für jedes <strong>other text-bearing object</strong></blockquote>
       </div>
     </div>
+
     <div class="step">
       <h2 class="red">Metadaten</h2>
       <h4><code class="xml tei-doc-link">&lt;teiHeader&gt;</code> – Optionale Elemente </h4>
@@ -487,6 +546,9 @@
         </blockquote>
       </div>
     </div>
+
+
+
     <div class="step">
       <div>
         <h2 class="red">Bilddaten</h2>
@@ -804,7 +866,7 @@ Space on stone, extent unknown:
     &lt;space extent="unknown" unit="character"/&gt;
 
 Numeral (Roman):
-    &lt;num value="12"&gt;ⅩⅡ&lt;/num&gt; 
+    &lt;num value="12"&gt;ⅩⅡ&lt;/num&gt;
 
 Numeral (Greek):
     &lt;num value="1"&gt;α&lt;/num&gt;
