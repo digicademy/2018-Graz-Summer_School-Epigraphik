@@ -59,7 +59,7 @@
 
   <!-- html5 dataset shim for IE -->
   <script src="vendor/impress/html5-dataset.js" type="text/javascript"></script>
-  <link href="https://fonts.googleapis.com/css?family=UnifrakturCook:700|UnifrakturMaguntia" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=UnifrakturCook:700|UnifrakturMaguntia" rel="stylesheet" />
 
 </head>
 
@@ -114,6 +114,9 @@
       <div>
         <h2 class="red centered">XML – Extensible Markup Language</h2>
         <h2 class="line-height-one-five centered">Semantik statt Typographie</h2>
+        <blockquote> Generalizing from that sense, we define markup, or (synonymously) encoding, as any means of <strong>making explicit an interpretation</strong> of a text. </blockquote>
+        <p class="right x-small">aus: <a href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/SG.html">A Gentle
+          Introduction to XML</a></p>
         <ul class="line-height-one-five">
           <li>
             Erweiterbar und anpassbar.
@@ -121,9 +124,7 @@
           <li>Geräte- wie Plattform-unabhängige Speicherung und Prozessierung von digitalen Texten</li>
           <li>Austausch- und Kommunikations-Format</li>
         </ul>
-        <blockquote> Generalizing from that sense, we define markup, or (synonymously) encoding, as any means of <strong>making explicit an interpretation</strong> of a text. </blockquote>
-        <p class="right">aus: <a href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/SG.html">A Gentle
-              Introduction to XML</a></p>
+       
       </div>
     </div>
     <div class="step" id="xml">
@@ -203,13 +204,13 @@
     <div class="step">
       <blockquote><span class="red smallcaps">Attribute</span> <code class="xml tei-doc-link">&lt;element attribut=&quot;attributwert&quot;&gt;</code></blockquote>
       <pre><code class="xml tei-doc-link linenumbers">&lt;correspDesc xml:id="unique_letter_id"&gt;
-  &lt;correspAction  type="sent" key="B000001"&gt;
+  &lt;correspAction  type="sent"&gt;
      &lt;persName sex="male" ref="http://d-nb.info/gnd/118540238"&gt;
         &lt;forename&gt;Max&lt;/forename&gt;
         &lt;surename&gt;Mustermann&lt;/surename&gt;
       &lt;/persName&gt;
   &lt;/correspAction&gt;
-  &lt;correspAction  type="sent"&gt;
+  &lt;correspAction  type="received"&gt;
       &lt;persName sex="female" ref="http://d-nb.info/gnd/118540987"&gt;
         &lt;forename&gt;Mina&lt;/forename&gt;
         &lt;surename&gt;Musterfrau&lt;/surename&gt;
@@ -250,10 +251,10 @@
         <li><strong>Regelkonforme Elementnamen</strong> sind case sensitive, müssen mit Unterstrichen oder Buchstaben beginnen und dürfen keine Leerstellen enthalten.
           <ul>
             <li>
-              <code>&lt;2018_date&gt;&lt;/date&gt; ≠ &lt;date_2018&gt;</code></li>
+              <code>&lt;Date&gt; ≠ &lt;date&gt;</code></li>
             <li>
-              <code>&lt;2018_date&gt;&lt;/date&gt; ⇒ &lt;date_2018&gt;</code></li>
-        </li>
+              <code>&lt;2018_date&gt; ⇒ &lt;date_2018&gt;</code></li>
+        
         </ul>
         </li>
         <li>Jedes <strong>geöffnete</strong> Element muss <strong>geschlossen</strong> werden.</li>
@@ -262,13 +263,12 @@
           <ul>
             <li>
               <code>&lt;date&gt;&lt;/date&gt; => &lt;date /&gt;</code></li>
-        </li>
-        </ul>
+              </ul>
         </li>
         <li><strong>Trennzeichen</strong> sind zu <strong>maskieren</strong> und damit als Entitäten einzufügen, wenn sie als “normale” Zeichen erscheinen sollen:
           <ul>
             <li>
-              <code>& ⇒ &amp;amp;</code>
+              <code>&amp; ⇒ &amp;amp;</code>
             </li>
           </ul>
         </li>
@@ -343,7 +343,7 @@
         <strong>media</strong> and the forms of the <strong>graphemes</strong> are
         <strong>diverse</strong>: engravings in stone or metal, scratches on rock, impressions in wax, embossing on cast metal, cameo or intaglio on precious stones, painting on ceramic or in fresco [etc.]. <strong>Typically the material is durable</strong>,
         but the durability might be an accident of circumstance, such as the baking of a clay tablet in a conflagration. </blockquote>
-      <p class="small">Wikipedia contributors, “Epigraphy”, Wikipedia, The Free Encyclopedia, <a href="https://en.wikipedia.org/w/index.php?title=Epigraphy&oldid=820499672">https://en.wikipedia.org/w/index.php?title=Epigraphy&oldid=820499672</a> (23.1.2018).
+      <p class="small">Wikipedia contributors, “Epigraphy”, Wikipedia, The Free Encyclopedia, <a href="https://en.wikipedia.org/w/index.php?title=Epigraphy&amp;oldid=820499672">https://en.wikipedia.org/w/index.php?title=Epigraphy&amp;oldid=820499672</a> (23.1.2018).
       </p>
     </div>
     <div class="step">
@@ -391,21 +391,22 @@
 
     <div class="step">
       <h2 class="red">Ein paar Grundregeln</h2>
-      <blockquote class="down-25"> EpiDoc ist ein sich <strong>entwickelnder</strong> Vorschlag. Das "P" hinter TEI steht für <strong>proposal</strong>, die “5” für die <strong>Version</strong>. TEI ist <strong>kein Zwangskorsett</strong>.
-      </blockquote>
-      <blockquote class="substep down-25"> TEI entsteht aus der <strong>epigraphischen Praxis</strong> der Community <strong>für die Community</strong>.
-      </blockquote>
-      <blockquote class="substep down-25">Nur Elemente und Attribute nutzen, die für das
-        <strong>Verständnis der Quelle</strong> nötig und nützlich sind.
-        <!-- (Das heisst: Nicht alles, was ausgezeichnet werden könnte, muss auch ausgezeichnet werden). -->
-      </blockquote>
-      <blockquote class="substep down-25">Sinnvoller Einsatz von TEI setzt ein
-        <strong>Konzept</strong> voraus (Editionsrichtlinien, Fragestellung, etc.).</blockquote>
-      <blockquote class="substep down-25">EpiDoc Schema und Struktur ermöglichen geführte,
-        <strong>regelbasierte Erfassung</strong> von (historischen) Texten. </blockquote>
-      <blockquote class="substep down-25">EpiDoc-TEI-XML nicht auswendig lernen! Das dahinterliegende Schema ist leitend und die <strong>Guidelines bieten
-            Beispiele</strong>! </blockquote>
-    </div>
+      
+     <ul class="line-height-one-five"> <li class="down-25"> TEI ist ein sich <strong>entwickelnder</strong> Vorschlag. Das "P" hinter TEI steht für <strong>proposal</strong>, die “5” für die <strong>Version</strong>. TEI ist <strong>kein Zwangskorsett</strong>.
+     </li>
+       <li class="substep down-25"> EpiDoc entsteht aus der <strong>epigraphischen Praxis</strong> der Community <strong>für die Community</strong>.
+       </li>
+       <li class="substep down-25">Nur Elemente und Attribute nutzen, die für das
+         <strong>Verständnis der Quelle</strong> nötig und nützlich sind.
+         <!-- (Das heisst: Nicht alles, was ausgezeichnet werden könnte, muss auch ausgezeichnet werden). -->
+       </li>
+       <li class="substep down-25">Sinnvoller Einsatz von TEI setzt ein
+         <strong>Konzept</strong> voraus (Editionsrichtlinien, Fragestellung, etc.).</li>
+       <li class="substep down-25">EpiDoc Schema und Struktur ermöglichen geführte,
+         <strong>regelbasierte Erfassung</strong> von (historischen) Texten. </li>
+       <li class="substep down-25">EpiDoc-TEI-XML nicht auswendig lernen! Das dahinterliegende Schema ist leitend und die <strong>Guidelines bieten
+         Beispiele</strong>! </li>
+     </ul>    </div>
     <div class="step">
       <div>
         <h2 class="red">Processing Instructions</h2>
@@ -454,8 +455,8 @@
       <h2 class="red">Metadaten</h2>
       <blockquote>Why store <strong>data about an object</strong>, when you have the object itself? Because <strong>without data</strong> about the objects contained in a space, any sufficiently complex space is <strong>indistinguishable from chaos</strong>.</blockquote>
       <p class="x-small right">Pomerantz 2017</p>
+      <h4 class="red">Kleine Merksätze zur Metadaten-Vergabe:</h4>
       <ul class="line-height-one-five">
-        <h4 class="red">Kleine Merksätze zur Metadaten-Vergabe:</h4>
         <li>
           Ein <strong>Metadaten-Schema</strong> und ein mindesten projektweites <strong>Vergabe-Konzept</strong> verwenden; Nutzung<a href="http://digitale-wissenschaft.de/wissensblog/normdaten-was-sie-koennen-wo-du-sie-findest/">[↗]</a> von <strong>Normdaten</strong>          und <strong>Authority Files</strong>.
         </li>
@@ -470,8 +471,8 @@
 
     <div class="step">
       <h2 class="red">Normdaten</h2>
+      <h4 class="red">Was sind Normdateien</h4>
       <ul class="line-height-one-five">
-        <h4 class="red">Was sind Normdateien</h4>
         <li>
           <strong>Normierte</strong> und <strong>kuratierte</strong> Sammlungen von <strong>Informationseinheiten</strong> im Kontext eines spezifischen <strong>Fachgebietes</strong>, e.g. über Personen oder Geographika, in mensch- (👩) und maschinen-lesbarer
           (🤖) Form (Stichwort <strong>content negotiation</strong>).
@@ -512,16 +513,17 @@
         <li>Geographika
           <ul class="small line-height-one-five medium">
             <li>
-              <a href="http://www.getty.edu/vow/TGNServlet?english=Y&amp;find=Frankfurt&amp;place=inhabited+place&amp;page=1&amp;nation=">Thesaurus of Geographic Names </a> [TGN] kennt Frankfurt am Main als <a href="http://vocab.getty.edu/tgn/7005293"><code>http://vocab.getty.edu/tgn/7005293</code></a>;
+              <a href="http://www.getty.edu/vow/TGNServlet?english=Y&amp;find=Frankfurt&amp;place=inhabited+place&amp;page=1&amp;nation=">Thesaurus of Geographic Names </a> [TGN] kennt <em>Frankfurt am Main</em> als <a href="http://vocab.getty.edu/tgn/7005293"><code>http://vocab.getty.edu/tgn/7005293</code></a>;
               <a href="http://www.geonames.org/">GeoNames</a> als <a href="http://www.geonames.org/3220968"><code>http://www.geonames.org/3220968</code></a>
             </li>
-            <li>Historische Geographika– <a href="http://pleiades.stoa.org/places/678401">Pleiades</a>
+            <li>Historische Geographika– <a href="http://pleiades.stoa.org/places/678401">Pleiades</a>, Pelagios Commons
             </li>
 
 
             <li>Spezifischere Geographika bspw. Judaistik/Hebraistik – <a href="https://geo-kima.org">Kima
                                   Historical Gazeteer</a>
             </li>
+            
           </ul>
         </li>
 
@@ -542,11 +544,11 @@
           <ul class="line-height-one-five">
 
 
-            <li><a href="http://www.getty.edu/vow/AATFullDisplay?find=headstone&amp;logic=AND&amp;note=&amp;subjectid=300266769">Arts and Architecture Thesaurus</a> [AAT] kennt Grabstein als <a href="http://vocab.getty.edu/aat/300266769"><code>http://vocab.getty.edu/aat/300266769</code></a></li>
+            <li><a href="http://www.getty.edu/vow/AATFullDisplay?find=headstone&amp;logic=AND&amp;note=&amp;subjectid=300266769">Arts and Architecture Thesaurus</a> [AAT] kennt <em>Grabstein</em> als <a href="http://vocab.getty.edu/aat/300266769"><code>http://vocab.getty.edu/aat/300266769</code></a></li>
             <li><a href="http://www.iconclass.org/rkd/25G41%28LILY%29/">Iconclass</a> – <q>a multilingual classification system for cultural
-                                    content</q> – kennt Lilien als <code><a href="http://www.iconclass.org/rkd/25G41%28LILY%29/">http://www.iconclass.org/rkd/25G41%28LILY%29/</a></code> </li>
-            <li><a href="https://www.eagle-network.eu/resources/vocabularies/">EAGLE</a> [The Europeana network of Ancient Greek and Latin Epigraphy] kennt Eisen als <a href="https://www.eagle-network.eu/voc/material/lod/111">https://www.eagle-network.eu/voc/material/lod/111</a></li>
-          </ul>
+                                    content</q> – kennt <em>Lilien</em> als <code><a href="http://www.iconclass.org/rkd/25G41%28LILY%29/">http://www.iconclass.org/rkd/25G41%28LILY%29/</a></code> </li>
+          <li><a href="https://www.eagle-network.eu/resources/vocabularies/">EAGLE</a> [The Europeana network of Ancient Greek and Latin Epigraphy] kennt <em>Eisen</em> als <a href="https://www.eagle-network.eu/voc/material/lod/111"><code>https://www.eagle-network.eu/voc/material/lod/111</code></a></li>
+<li>AAT</li>            </ul>
         </li>
       </ul>
     </div>
@@ -596,8 +598,7 @@ WHERE {
 }
 LIMIT 100
 </code>  </pre>
-      </li>
-      </ul>
+   
     </div>
 
 
@@ -622,7 +623,7 @@ LIMIT 100
             <li><code class="xml tei-doc-link">&lt;history&gt;</code></li>
           </ul>
         </blockquote>
-        <blockquote><strong>Hinweis</strong> <code class="xml tei-doc-link">&lt;msDesc&gt;</code> gilt nicht nur für Handschriften, sondern für jedes <strong>other text-bearing object</strong></blockquote>
+        <blockquote><strong>Hinweis</strong> <code class="xml tei-doc-link">&lt;msDesc&gt;</code> gilt nicht nur für Handschriften, sondern für jedes <em>other</em> <strong>text-bearing object</strong></blockquote>
       </div>
     </div>
 
@@ -811,7 +812,7 @@ Added below:
         <h2 class="red">Textkonstitution II</h2>
         <h4>Editorische Hinzufügungen</h4>
         <pre>
-<code class="xml tei-doc-link linenumbers">Supplied (Lost):
+<code class="xml tei-doc-link linenumbers">Supplied (lost):
     &lt;supplied reason="lost"&gt;γδ&lt;/supplied&gt;
 
 Supplied (lost, low certainty):
