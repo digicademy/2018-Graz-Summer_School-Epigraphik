@@ -982,9 +982,6 @@ Numeral (Greek):
 Numeral (Greek):
     &lt;num value="1000"&gt;α&lt;/num&gt;
 
-Punctuation:
-    &lt;g type="punctuation" subtype="word_separator"/&gt;
-
 Symbol:
     &lt;g type="bear"/&gt;
 </code></pre>
@@ -993,6 +990,63 @@ Symbol:
     </div>
 
 
+    <div class="step">
+      <div>
+        <h2 class="red">Textkonstitution VII</h2>
+        <h4>Interpunktion, Segmente, Wörter, Wortzeichen</h4>
+        <pre>
+<code class="xml tei-doc-link linenumbers">Punctuation (“offene” Semantik):
+    &lt;g type="punctuation" subtype="word_separator"/&gt;
+
+Punctuation (“geschlossene” Semantik):
+    &lt;pc type="separator" force="strong" unit="word"/&gt;
+
+Segment &amp; Sentence:
+    &lt;seg resp="#editor"&gt;equiti iosepho me fecit&lt;/seg&gt;
+    &lt;s type=""&gt;Anno domini m cccc lxii obiit armiger renardvs&lt;/s&gt;
+    &lt;s type=""&gt;vxor titolvm posuit&lt;/s&gt;
+
+Word:
+    &lt;w lemma="eques"&gt;equiti&lt;/w&gt;
+    &lt;w lemmaRef="https://en.wiktionary.org/wiki/eques#Latin"&gt;equiti&lt;/w&gt;
+
+Character:
+    &lt;c rend="versalie"&gt;e&lt;/c&gt;quiti
+    &lt;c rendition="#versalie"&gt;e&lt;/c&gt;quiti
+
+Places &amp; Persons:
+    &lt;rs type="person" ref="#person_0001"&gt;Iosepho&lt;/rs&gt;
+    &lt;placeName type="settlement" key="160255975"&gt;Graz&lt;/placeName&gt;
+    &lt;persName role="ruler" key="Friedrich, HRR, III., "&gt;Fridericus III.&lt;/persName&gt;
+</code></pre>
+        <!-- <blockquote>Erläuterungen ###</blockquote> -->
+      </div>
+    </div>
+
+
+    <div class="step">
+      <div>
+        <h2 class="red">Textkonstitution VIII</h2>
+        <h4>Allgemeine Attribute</h4>
+        <ul>
+          <li>
+            <a href="http://www.tei-c.org/release/doc/tei-p5-doc/de/html/ref-att.global.html">@xml:id, @n, @xml:lang, @xml:base, @xml:space</a> (Ankerpunkte, Sprachen)
+          </li>
+          <li>
+            <a href="http://www.tei-c.org/release/doc/tei-p5-doc/de/html/ref-att.canonical.html">@key, @ref</a> (Referenzierung)
+          </li>
+          <li>
+            <a href="http://www.tei-c.org/release/doc/tei-p5-doc/de/html/ref-att.typed.html">@type, @subtype</a> (Typisierung)
+          </li>
+          <li>
+            <a href="http://www.tei-c.org/release/doc/tei-p5-doc/de/html/ref-att.global.rendition.html">@rend, @style, @rendition</a> (Graphischer Befund)
+          </li>
+          <li>
+            <a href="http://www.tei-c.org/release/doc/tei-p5-doc/de/html/ref-att.global.responsibility.html">@cert, @resp</a> (Verantwortlichkeit)
+          </li>
+        </ul>
+      </div>
+    </div>
 
 
     <div class="step">
