@@ -80,10 +80,10 @@
       <div class="step">
         <h4 class="down-25"><strong>11. Juli 2018 | Graz</strong></h4>
         <h1 class="webfont">Digitale Epigraphik</h1>
-        <h2 class="red down-25" style="font-size: 42px;">Einführung und Grundlagen</h2>
-        <h3>Internationale Summerschool “Materialität und Schriftlichkeit” an der
+        <h2 class="red up-25" style="font-size: 42px;">Einführung und Grundlagen</h2>
+        <h3 class="down-50">Internationale Summerschool “Materialität und Schriftlichkeit” an der
           Karl-Franzens-Universität Graz</h3>
-        <h4>
+        <h4 class="medium">
           <strong>Slides: </strong>
           <a href="https://digicademy.github.io/2018-Graz-Summer_School-Epigraphik"
             title="View the presentation online"
@@ -124,8 +124,8 @@
         <blockquote> The focus of such a class is not so much an intensive EpiDoc training, but
           rather demonstrating that structured markup is nothing more than structured thinking about
           data. The structure of an XML document reflects the structure of an epigraphic edition.
-            <span class="highlight">Following the strict hierarchy of XML forces one to better
-            organise one’s thoughts, approach towards, and work on an epigraphic document</span>. We
+            <strong>Following the strict hierarchy of XML forces one to better
+            organise one’s thoughts, approach towards, and work on an epigraphic document</strong>. We
           have found that it is highly beneficial to be able to process and produce information in a
           well structured and clearer way, even if the students do not show interest in further DH
           training.</blockquote>
@@ -315,7 +315,7 @@
       </div>
       <div class="step" id="part_001">
         <h1 class="red">Standards und die Community</h1>
-        <h2 class="line-height-one-five">Die Text Encoding Intiative und Epigraphic Documents</h2>
+        <h2 class="line-height-one-five">Die Text Encoding Initiative und Epigraphic Documents</h2>
       </div>
       <div class="step">
         <div class="centered">
@@ -425,12 +425,13 @@
       </div>
       <div class="step">
         <div>
-          <h2 class="red">Beispiele</h2>
-          <a href="http://wiki.digitalclassicist.org/Category:EpiDoc"><img
-              src="resources/img/DigitClass_epiDoc_Projects.png" style="height:66%; width:66%;"
+          <h2 class="red">Epigraphische Projekte</h2>
+          <figure class="mfp-lightbox">
+            <a href="resources/img/DigitClass_epiDoc_Projects.png"><img
+            src="resources/img/DigitClass_epiDoc_Projects.png" style="height:66%; width:66%;"
              /></a>
-          <p class="small">Quelle: <a href="http://wiki.digitalclassicist.org/Category:EpiDoc"
-              >http://wiki.digitalclassicist.org/Category:EpiDoc</a></p>
+          <p class="x-small">Quelle: <a href="http://wiki.digitalclassicist.org/Category:EpiDoc"
+              >http://wiki.digitalclassicist.org/Category:EpiDoc</a></p></figure>
           <!-- <ul><li>Slider</li></ul>-->
         </div>
       </div>
@@ -596,8 +597,11 @@
               </li>
             </ul>
           </li>
-
-
+        </ul>
+      </div>
+      <div class="step ">
+        <h2 class="red">Normdateien und kontrollierte Vokabulare (Auswahl)</h2>
+        <ul class="line-height-one-five medium">
           <li>Physische Form | Symbole | Materialien <ul class="line-height-one-five">
 
 
@@ -705,30 +709,32 @@ LIMIT 100
                   </li>
                 </ul>
               </li>
-              <li><a href="http://www.stoa.org/epidoc/gl/latest/app-allsupp.html">List of all
-                  supporting Data Guidelines</a></li>
+              
 
             </ul>
-          </blockquote>
+          </blockquote><p class="x-small right">Quelle: <a href="http://www.stoa.org/epidoc/gl/latest/app-allsupp.html">List of all
+                  supporting Data Guidelines</a></p>
         </div>
       </div>
       <div class="step">
+        <h4>Weitere Metadaten-Elemente</h4>
         <p>EpiDoc ermöglicht strukturierte Eingaben zur Beschreibung des Epitaphs, u.a. </p>
         <ul>
-          <li><code>&lt;physDesc&gt;</code>
+          <li><code class="xml tei-doc-link">&lt;physDesc&gt;</code>
             <ul>
-              <li>&lt;ObjectDesc&gt; &lt;layout&gt; </li>
-              <li>&lt;layoutDesc&gt; &lt;layout&gt; </li>
-              <li>&lt;handDesc&gt; &lt;handNote&gt; </li>
-              <li>&lt;decoDesc&gt; &lt;decoNote&gt; </li>
+              <li><code class="xml tei-doc-link">&lt;objectDesc&gt;</code> …<code class="xml tei-doc-link">&lt;objectType&gt; </code></li>
+              <li><code class="xml tei-doc-link">&lt;layoutDesc&gt;</code> <code class="xml tei-doc-link">&lt;layout&gt;</code> </li>
+              <li><code class="xml tei-doc-link">&lt;handDesc&gt;</code> <code class="xml tei-doc-link">&lt;handNote&gt; </code></li>
+              <li><code class="xml tei-doc-link">&lt;decoDesc&gt;</code> <code class="xml tei-doc-link">&lt;decoNote&gt;</code> </li>
 
             </ul></li>
         </ul>
         <p>Gleichermassen können Angaben zu Ort und Zeit, Provinenz, Fundorte etc. gemacht werden: </p>
         <ul>
-          <li>&lt;history&gt;<ul>
-              <li>&lt;origDate&gt;</li>
-              <li>&lt;origPlace&gt;</li>
+          <li><code class="xml tei-doc-link">&lt;history&gt;</code><ul>
+            <li><code class="xml tei-doc-link">&lt;origDate&gt;</code></li>
+            <li><code class="xml tei-doc-link">&lt;origPlace&gt;</code></li>
+            <li><code class="xml tei-doc-link">&lt;provenance&gt;</code> (auch kopiale Überlieferung)</li>
             </ul>
           </li>
         </ul>
