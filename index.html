@@ -191,19 +191,7 @@
 
     </div>
 
-    <div class="step">
-      <blockquote>
-        <span class="red smallcaps">Leere Elemente</span> <code class="xml tei-doc-link">&lt;element /&gt;</code>
-      </blockquote>
-      <pre><code class="xml tei-doc-link linenumbers">&lt;lb/&gt; Lorem ipsum
-&lt;lb/&gt; dolor sit
-&lt;lb/&gt; adipiscit &lt;handShift/&gt;quid
-&lt;lb/&gt; paretur
-</code></pre>
-      <blockquote>
-        <strong>Sinn</strong>: Kennzeichnung von punktuellen Änderungen oder Ansetzung von Ankerpunkten innerhalb eines Dokumentes.
-      </blockquote>
-    </div>
+
 
     <div class="step">
       <blockquote><span class="red smallcaps">Attribute</span> <code class="xml tei-doc-link">&lt;element attribut=&quot;attributwert&quot;&gt;</code></blockquote>
@@ -227,6 +215,21 @@
       </blockquote>
     </div>
 
+
+    <div class="step">
+      <blockquote>
+        <span class="red smallcaps">Leere Elemente</span> <code class="xml tei-doc-link">&lt;element /&gt;</code>
+      </blockquote>
+      <pre><code class="xml tei-doc-link linenumbers">&lt;lb/&gt; Lorem ipsum
+&lt;lb/&gt; dolor sit
+&lt;lb/&gt; adipiscit &lt;handShift/&gt;quid
+&lt;lb/&gt; paretur
+</code></pre>
+      <blockquote>
+        <strong>Sinn</strong>: Kennzeichnung von punktuellen Änderungen oder Ansetzung von Ankerpunkten innerhalb eines Dokumentes.
+      </blockquote>
+    </div>
+    <!--
     <div class="step">
       <blockquote><span class="red smallcaps">Namespace-Präfixe</span> <code class="xml tei-doc-link">&lt;pre:fixelement&gt;</code></blockquote>
       <pre><code class="xml tei-doc-link linenumbers">&lt;root xmlns:prj=&quot;http://url/to/namespace/prj/&quot;&gt;
@@ -240,6 +243,7 @@
         <strong>Sinn</strong>: Disambiguierung gleichlautender Elementnamen bei Benutzung unterschiedlicher “XML-Regelwerke”.
       </blockquote>
     </div>
+  -->
 
     <div class="step">
       <h2 class="red">Wohlgeformtheit und Validität</h2>
@@ -250,7 +254,7 @@
     </div>
     <div class="step">
       <h2 class="red">Notations- und Syntaxregeln</h2>
-      <ul class="line-height-one-five">
+      <ul class="small line-height-one-five">
         <li>Jedes Dokument enhält <strong>genau ein Wurzelelement</strong> (root element), das alle anderen Elemente des Baumes in sich schließt.</li>
         <li><strong>Regelkonforme Elementnamen</strong> sind case sensitive, müssen mit Unterstrichen oder Buchstaben beginnen und dürfen keine Leerstellen enthalten.
           <ul>
@@ -400,7 +404,7 @@
     <div class="step">
       <h2 class="red">Ein paar Grundregeln</h2>
 
-      <ul class="line-height-one-five">
+      <ul class="small line-height-one-five">
         <li class="down-25"> TEI ist ein sich <strong>entwickelnder</strong> Vorschlag. Das "P" hinter TEI steht für <strong>proposal</strong>, die “5” für die <strong>Version</strong>. TEI ist <strong>kein Zwangskorsett</strong>.
         </li>
         <li class="substep down-25"> EpiDoc entsteht aus der <strong>epigraphischen Praxis</strong> der Community <strong>für die Community</strong>.
@@ -569,7 +573,8 @@
       <h2 class="red">Und was macht man dann damit …? Linked Open Data!</h2>
       <ul class="line-height-one-five">
         <li>
-          <a href="https://digicademy.github.io/2016-agehum-lodworkshop/#/step-1">LOD auf Basis von Normdaten</a> ermöglicht automatische Anreicherung, semantische Verknüpfung und komplexe Analyse von Forschungsdatensets:
+          <a href="https://digicademy.github.io/2016-agehum-lodworkshop/#/step-1">LOD auf Basis von Normdaten</a> ermöglicht automatische <strong>Anreicherung</strong>, semantische <strong>Verknüpfung</strong> und komplexe <strong>Analyse</strong> von
+          Forschungsdatensets:
           <ul class="line-height-one-five">
             <li class="substep">
               Dritte können meine digitalen Ressourcen finden und nachnutzen.
@@ -692,16 +697,15 @@ LIMIT 100
       <div>
         <h2 class="red">Textdaten – Edition II</h2>
         <h4>Textauszeichnung</h4>
-        <ul class="line-height-one-five">
+        <ul class="small line-height-one-five">
           <li>Alle zusammengehörigen Textteile des Inschriftenträgers werden von einem
             <code class="xml tei-doc-link">&lt;div type="edition"&gt;</code> geklammert.</li>
           <li> Die Transkriptionen der einzelnen Textteile stehen jeweils in spezifischen
             <code class="xml tei-doc-link">&lt;div type="textpart" subtype="pediment" n="A"&gt;&lt;/ab&gt; … &lt;/ab&gt;&lt;/div&gt;</code>. Die Angabe von
             <code class="xml tei-doc-link">type="textpart"</code> ist obligatorisch, die Angabe der Attribute
-            <code class="xml tei-doc-link">subtype</code> und <code class="xml tei-doc-link">n</code> ist optional. <code class="xml tei-doc-link">&lt;ab&gt; …
-                &lt;/ab&gt;</code> klammern Textblöcke als semantisch-neutrale Alternative zu
+            <code class="xml tei-doc-link">subtype</code> und <code class="xml tei-doc-link">n</code> ist optional. <code class="xml tei-doc-link">&lt;ab&gt; … &lt;/ab&gt;</code> klammern Textblöcke als semantisch-neutrale Alternative zu
             <code class="xml tei-doc-link">&lt;p&gt; … &lt;/p&gt;</code>. </li>
-          <li> Die epigraphische Notation wird in XML-Notation nachgebaut. Bsp.: <code class="xml tei-doc-link">[γδ]</code> wird zu <code class="xml tei-doc-link">&lt;supplied reason="lost"&gt;γδ&lt;/supplied&gt;</code> (siehe auch <a href="https://sourceforge.net/p/epidoc/code/HEAD/tree/trunk/guidelines/msword/cheatsheet.doc?format=raw">Leiden Cheatsheet</a>).
+          <li> Die epigraphische Notation wird in XML-Notation nachgebaut. Bsp.: <code class="xml tei-doc-link">[Anno]</code> wird zu <code class="xml tei-doc-link">&lt;supplied reason="lost"&gt;Anno&lt;/supplied&gt;</code> (siehe auch <a href="https://sourceforge.net/p/epidoc/code/HEAD/tree/trunk/guidelines/msword/cheatsheet.doc?format=raw">Leiden Cheatsheet</a>).
           </li>
           <li> Kommentarteil(e), Apparat(e) und Bibliographischer Teil stehen jeweils in eigenen
             <code class="xml tei-doc-link">&lt;div&gt;</code>. </li>
@@ -717,17 +721,17 @@ LIMIT 100
   &lt;text&gt;
    &lt;body&gt;
        &lt;div type="edition"&gt;
-          &lt;div type="textpart" subtype="pediment" n="1"&gt;
+          &lt;div type="textpart" subtype="pediment" n="I"&gt;
             &lt;ab&gt;
               &lt;lb n="1"/&gt; Lorem ipsum &lt;lb n="2"/&gt; dolor sit
             &lt;/ab&gt;
           &lt;/div&gt;
-          &lt;div type="textpart" subtype="section" n="2"&gt;
+          &lt;div type="textpart" subtype="section" n="II"&gt;
             &lt;ab&gt;
               &lt;lb n="1"/&gt; Lorem ipsum &lt;lb n="2"/&gt; dolor sit
             &lt;/ab&gt;
           &lt;/div&gt;
-          &lt;div type="textpart" subtype="base" n="3"&gt;
+          &lt;div type="textpart" subtype="base" n="III"&gt;
             &lt;ab&gt;
               &lt;lb n="1"/&gt; Lorem ipsum &lt;lb n="2"/&gt; dolor sit
             &lt;/ab&gt;
@@ -1011,8 +1015,7 @@ Punctuation (“geschlossene” Semantik):
 
 Segment &amp; Sentence:
     &lt;seg resp="#editor"&gt;equiti iosepho me fecit&lt;/seg&gt;
-    &lt;s type=""&gt;Anno domini m cccc lxii obiit armiger renardvs&lt;/s&gt;
-    &lt;s type=""&gt;vxor titolvm posuit&lt;/s&gt;
+    &lt;s type="date_line"&gt;Anno domini m cccc lxii&lt;/s&gt;
 
 Word:
     &lt;w lemma="eques"&gt;equiti&lt;/w&gt;
@@ -1182,26 +1185,6 @@ Places &amp; Persons:
     </div>
 
 
-    <div class="step" id="part_003">
-      <div>
-        <h1 class="red">0X</h1>
-        <h2 class="line-height-one-five"> Weiteres Material</h2>
-      </div>
-    </div>
-
-
-    <div class="step" id="part_003">
-      <div>
-
-        <h2 class="line-height-one-five">Datenkonversion</h2>
-        <p>
-          Schaubild Datenkonversion DOCX zu/aus EpiDoc zu/aus XLS/CSV
-        </p>
-        <p>
-          Wappen in EpiDoc
-        </p>
-      </div>
-    </div>
 
   </div>
   <!-- jquery -->
