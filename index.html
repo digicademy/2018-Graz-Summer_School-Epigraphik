@@ -526,8 +526,8 @@
       </div>
       <div class="step">
         <h2 class="red">Normdaten</h2>
-        <h4 class="red">Was sind Normdateien</h4>
-        <ul class="line-height-one-five">
+        <h4 class="red">Was sind Normdateien?</h4>
+        <ul class="line-height-one-five small">
           <li>
             <strong>Normierte</strong> und <strong>kuratierte</strong> Sammlungen von
               <strong>Informationseinheiten</strong> im Kontext eines spezifischen
@@ -679,7 +679,7 @@ LIMIT 100
 &lt;/teiHeader&gt;
 </code>
 </pre>
-          <blockquote> Die Section <code class="xml tei-doc-link">&lt;sourceDesc&gt;</code> bietet
+          <blockquote class="small"> Die Section <code class="xml tei-doc-link">&lt;sourceDesc&gt;</code> bietet
             zahlreiche struktierende Elemente zur Beschreibung der Quelle. <ul
               class="line-height-one-five">
               <li><code class="xml tei-doc-link">&lt;msIdentifier&gt;</code></li>
@@ -723,8 +723,8 @@ LIMIT 100
         <ul>
           <li><code class="xml tei-doc-link">&lt;physDesc&gt;</code>
             <ul>
-              <li><code class="xml tei-doc-link">&lt;objectDesc&gt;</code> …<code
-                  class="xml tei-doc-link">&lt;objectType&gt; </code></li>
+              <li><code class="xml tei-doc-link">&lt;objectDesc&gt;</code> <code
+                  class="xml tei-doc-link">&lt;objectType&gt;</code> <code class="xml tei-doc-link">&lt;material&gt;</code></li>
               <li><code class="xml tei-doc-link">&lt;layoutDesc&gt;</code>
                 <code class="xml tei-doc-link">&lt;layout&gt;</code>
               </li>
@@ -756,14 +756,14 @@ LIMIT 100
           <blockquote>Bilddateien und andere digitale Faksimiles werden – so möglich mit @url – in
             der <code class="xml tei-doc-link">&lt;facsimile&gt;</code>-Sektion
             aufgeführt.</blockquote>
-          <figure class="mfp-lightbox">
+          <!--<figure class="mfp-lightbox">
             <a
               href="http://inschriften.net/fileadmin/user_upload/sonstiges/TMP/inschrift_graz_2018_bornschlegel.png"
                 ><img
                 src="http://inschriften.net/fileadmin/user_upload/sonstiges/TMP/inschrift_graz_2018_bornschlegel.png"
                 style="width:60%" /></a>
-          </figure>
-          <p class="x-small">Quelle:</p>
+          </figure>-->
+          <p class="x-small down-50">Quelle:</p>
           <pre class="up-25"><code>http://inschriften.net/fileadmin/user_upload/sonstiges/TMP/inschrift_graz_2018_bornschlegel.png</code>
       </pre>
         </div>
@@ -797,8 +797,7 @@ LIMIT 100
             <li>Alle zusammengehörigen Textteile des Inschriftenträgers werden von einem <code
                 class="xml tei-doc-link">&lt;div type="edition"&gt;</code> geklammert.</li>
             <li> Die Transkriptionen der einzelnen Textteile stehen jeweils in spezifischen <code
-                class="xml tei-doc-link">&lt;div type="textpart" subtype="pediment"
-                n="A"&gt;&lt;/ab&gt; … &lt;/ab&gt;&lt;/div&gt;</code>. Die Angabe von <code
+                class="xml tei-doc-link">&lt;div type="textpart" subtype="pediment" n="A"&gt; &lt;/ab&gt; … &lt;/ab&gt;&lt;/div&gt;</code>. Die Angabe von <code
                 class="xml tei-doc-link">type="textpart"</code> ist obligatorisch, die Angabe der
               Attribute <code class="xml tei-doc-link">subtype</code> und <code
                 class="xml tei-doc-link">n</code> ist optional. <code class="xml tei-doc-link"
@@ -1319,12 +1318,11 @@ Places &amp; Persons:
             <a href="https://github.com/digicademy/2018-EpiDoc-WS-1">
               https://github.com/digicademy/2018-EpiDoc-WS-1 </a>
           </li>
-          <li>Alle Inhalte, Illustrationen und Bilder sind frei zur Weiterverwendung und
-            Modifikation. <br /> Lizenz: <a href="https://creativecommons.org/licenses/by/4.0/"
-              >CC-BY 4.0</a>, <a
+          <li>Sofern nicht anders angegeben stehen alle Texte, Illustrationen und Bilder frei zur Weiterverwendung und
+            Modifikation zur Verfügung unter der <a href="https://creativecommons.org/licenses/by/4.0/"
+              >CC-BY 4.0</a> Lizenz<a
               href="http://www.adwmainz.de/mitarbeiter/profil/max-gruentgens.html">Max
-            Grüntgens</a>, <a href="http://www.adwmainz.de/mitarbeiter/profil/dominik-kasper.html"
-              >Dominik Kasper</a>, <a href="http://orcid.org/0000-0003-1904-1841">Thomas
+            Grüntgens</a>, <a href="http://orcid.org/0000-0003-1904-1841">Thomas
             Kollatz</a></li>
         </ul>
       </div>
@@ -1335,7 +1333,7 @@ Places &amp; Persons:
           <li><a href="data/handouts/epidoc.pdf">Handout zur Präsentation</a></li>
         </ul>
         <h4>Weitere (Summer/Winter) Schools</h4>
-        <ul>
+        <ul class="small line-height-one-five">
           <li> to be announced </li>
         </ul>
         <h4>Lizenzinformationen</h4>
