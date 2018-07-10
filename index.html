@@ -713,17 +713,41 @@ LIMIT 100
         </div>
       </div>
       <div class="step">
+        <p>EpiDoc ermöglicht strukturierte Eingaben zur Beschreibung des Epitaphs, u.a. </p>
+        <ul>
+          <li><code>&lt;physDesc&gt;</code>
+            <ul>
+              <li>&lt;ObjectDesc&gt; &lt;layout&gt; </li>
+              <li>&lt;layoutDesc&gt; &lt;layout&gt; </li>
+              <li>&lt;handDesc&gt; &lt;handNote&gt; </li>
+              <li>&lt;decoDesc&gt; &lt;decoNote&gt; </li>
+
+            </ul></li>
+        </ul>
+        <p>Gleichermassen können Angaben zu Ort und Zeit, Provinenz, Fundorte etc. gemacht werden: </p>
+        <ul>
+          <li>&lt;history&gt;<ul>
+              <li>&lt;origDate&gt;</li>
+              <li>&lt;origPlace&gt;</li>
+            </ul>
+          </li>
+        </ul>
+        <p class="right x-small">Quelle: <a
+            href="http://www.stoa.org/epidoc/gl/latest/app-allsupp.html"
+            >http://www.stoa.org/epidoc/gl/latest/app-allsupp.html</a></p>
+      </div>
+      <div class="step">
         <div>
           <h2 class="red">Bilddaten</h2>
-          <blockquote >Bilddateien und andere digitale Faksimiles werden – so möglich mit @url – in
+          <blockquote>Bilddateien und andere digitale Faksimiles werden – so möglich mit @url – in
             der <code class="xml tei-doc-link">&lt;facsimile&gt;</code>-Sektion
             aufgeführt.</blockquote>
           <figure class="mfp-lightbox">
             <a
               href="http://inschriften.net/fileadmin/user_upload/sonstiges/TMP/inschrift_graz_2018_bornschlegel.png"
                 ><img
-                src="http://inschriften.net/fileadmin/user_upload/sonstiges/TMP/inschrift_graz_2018_bornschlegel.png" style="width:60%"
-               /></a>
+                src="http://inschriften.net/fileadmin/user_upload/sonstiges/TMP/inschrift_graz_2018_bornschlegel.png"
+                style="width:60%" /></a>
           </figure>
           <p class="x-small">Quelle:</p>
           <pre class="up-25"><code>http://inschriften.net/fileadmin/user_upload/sonstiges/TMP/inschrift_graz_2018_bornschlegel.png</code>
@@ -1168,7 +1192,7 @@ Places &amp; Persons:
           </div>
           <ul class="line-height-one-five">
             <li>Oxygen neustarten</li>
-            <li>Um das <code>framework</code> benutzen zu können, muss der Dateiname enden auf 
+            <li>Um das <code>framework</code> benutzen zu können, muss der Dateiname enden auf
                 <em>_EpiDoc.xml</em> oder <em>.EpiDoc.xml</em></li>
           </ul>
         </fieldset>
@@ -1211,6 +1235,9 @@ Places &amp; Persons:
               and the Semantic Web: modelling, linking, visualising.</a> In: 1st Workshop on
             Humanities in the Semantic Web (WHiSe 2016). Anissaras. </li>
         </ul>
+      </div>
+      <div class="step">
+        <h3 class="red">Literatur </h3>
         <h4>Digital Humanities Tutorials &amp; Geo-Tools</h4>
         <ul class="small line-height-one-five">
           <li><a href="https://programminghistorian.org/">Programming Historian</a></li>
@@ -1250,6 +1277,8 @@ Places &amp; Persons:
               Textauszeichnung für Epigraphiker</a>
           </li>
         </ul>
+      </div>
+      <div class="step">
         <h4>Download</h4>
         <ul class="small line-height-one-five">
           <li>
