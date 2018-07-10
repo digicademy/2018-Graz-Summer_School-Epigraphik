@@ -135,7 +135,8 @@
 
       <h3 class="down-50">Beispiel</h3>
       <p>
-        <code>&lt;</code> Schlüsselwort <code>&gt;</code> <code>&amp;</code> Schlüsselwort <code>;</code>
+        <code>&lt;</code> Schlüsselwort <code>&gt;</code>
+        <br/><code>&amp;</code> Schlüsselwort <code>;</code>
       </p>
       <p>Vokabular und Syntax von XML sind <strong>anpassbar</strong> und
         <strong>erweiterbar</strong>. Mit Schema-Sprachen lässt sich ein
@@ -299,25 +300,27 @@
                         <li>interchange and communication format </li>
                     </ul> -->
         <blockquote>The Text Encoding Initiative (TEI) is a consortium which <strong>collectively</strong> develops and maintains a <strong>standard</strong> for the representation of texts in digital form. Its chief deliverable is a set of <strong>Guidelines</strong>          which specify encoding methods for <strong>machine-readable</strong> [=<strong>prozessierbare</strong>] <strong>texts</strong>, chiefly in the humanities, social sciences and linguistics. </blockquote>
-        <p class="right">aus: <a href="http://www.tei-c.org">http://www.tei-c.org</a></p>
+        <p class="right x-small">aus: <a href="http://www.tei-c.org">http://www.tei-c.org</a></p>
       </div>
     </div>
     <div class="step">
       <div class="centered">
         <h2 class="red">Guidelines</h2>
-        <a href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/index.html"><img
-              src="resources/img/tei-c.png" alt="tei guidelines" style="width:75%; height:75%"
-             /></a>
-        <p class="center small">Quelle: <a href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/index.html">http://www.tei-c.org/release/doc/tei-p5-doc/en/html/index.html</a></p>
+        <figure class="mfp-lightbox">
+          <a href="resources/img/tei-c.png"><img
+            src="resources/img/tei-c.png" alt="tei guidelines" style="width:75%; height:75%"
+             /></a></figure>
+        <p class="center x-small">Quelle: <a href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/index.html">http://www.tei-c.org/release/doc/tei-p5-doc/en/html/index.html</a></p>
       </div>
     </div>
     <div class="step">
       <div class="centered">
         <h2 class="red">Special Interest Groups</h2>
-        <a href="http://www.tei-c.org/Activities/SIG/"><img src="resources/img/tei-SIGs.png"
-              style="width:75%; height:75%" /></a>
+        <figure class="mfp-lightbox">        <a href="resources/img/tei-SIGs.png"><img src="resources/img/tei-SIGs.png"
+              style="width:75%; height:75%" /></a></figure>
+
       </div>
-      <p class="center small">Quelle: <a href="http://www.tei-c.org/Activities/SIG/">http://www.tei-c.org/Activities/SIG/</a></p>
+      <p class="center x-small">Quelle: <a href="http://www.tei-c.org/Activities/SIG/">http://www.tei-c.org/Activities/SIG/</a></p>
     </div>
     <div class="step">
       <div>
@@ -329,7 +332,7 @@
           <strong>materiality</strong> of the objects on which the texts appear (i.e., manuscripts, monuments, tablets, papyri, and other <strong>text-bearing objects</strong>).</blockquote>
       </div>
       <p class="right small">Quelle: <a href="https://sourceforge.net/p/epidoc/wiki/Home/">https://sourceforge.net/p/epidoc/wiki/Home/</a></p>
-    </div>
+    </div><!--
     <div class="step">
       <h2 class="red">Arbeitsdefinitionen: Inschrift</h2>
       <blockquote> Inschriften sind Beschriftungen <strong>verschiedener Materialien</strong> – in Stein, Holz, Metall, Leder, Stoff, Email, Glas, Mosaik usw. – die von Kräften und mit Methoden hergestellt sind, die <strong>nicht dem Schreibschul- und Kanzleibetrieb
@@ -346,6 +349,7 @@
       <p class="small">Wikipedia contributors, “Epigraphy”, Wikipedia, The Free Encyclopedia, <a href="https://en.wikipedia.org/w/index.php?title=Epigraphy&amp;oldid=820499672">https://en.wikipedia.org/w/index.php?title=Epigraphy&amp;oldid=820499672</a> (23.1.2018).
       </p>
     </div>
+    -->
     <div class="step">
       <div>
         <h2 class="red">EpiDoc</h2>
@@ -550,7 +554,7 @@
             <li><a href="http://www.iconclass.org/rkd/25G41%28LILY%29/">Iconclass</a> – <q>a multilingual classification system for cultural
                                     content</q> – kennt <em>Lilien</em> als <code><a href="http://www.iconclass.org/rkd/25G41%28LILY%29/">http://www.iconclass.org/rkd/25G41%28LILY%29/</a></code> </li>
             <li><a href="https://www.eagle-network.eu/resources/vocabularies/">EAGLE</a> [The Europeana network of Ancient Greek and Latin Epigraphy] kennt <em>Eisen</em> als <a href="https://www.eagle-network.eu/voc/material/lod/111"><code>https://www.eagle-network.eu/voc/material/lod/111</code></a></li>
-            <li>AAT</li>
+           
           </ul>
         </li>
       </ul>
@@ -695,7 +699,7 @@ LIMIT 100
             <code class="xml tei-doc-link">&lt;p&gt; … &lt;/p&gt;</code>. </li>
           <li> Die epigraphische Notation wird in XML-Notation nachgebaut. Bsp.: <code class="xml tei-doc-link">[γδ]</code> wird zu <code class="xml tei-doc-link">&lt;supplied reason="lost"&gt;γδ&lt;/supplied&gt;</code> (siehe auch <a href="https://sourceforge.net/p/epidoc/code/HEAD/tree/trunk/guidelines/msword/cheatsheet.doc?format=raw">Leiden Cheatsheet</a>).
           </li>
-          <li> Kommentarteil, Apparat und Bibliographischer Teil stehen jeweils in eigenen
+          <li> Kommentarteil(e), Apparat(e) und Bibliographischer Teil stehen jeweils in eigenen
             <code class="xml tei-doc-link">&lt;div&gt;</code>. </li>
         </ul>
       </div>
