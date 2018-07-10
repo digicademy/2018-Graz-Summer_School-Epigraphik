@@ -107,6 +107,11 @@ button.mfp-close {
   font-family: 'UnifrakturMaguntia', cursive;
 }
 
+.webfont {
+  font-family: 'IM Fell English SC', serif;
+    font-size: 120px;
+}
+
 
 /*
 * TEI Documentation Link
