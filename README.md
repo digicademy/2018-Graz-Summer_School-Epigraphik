@@ -7,4 +7,4 @@
 
 Folien: https://digicademy.github.io/2018-Graz-Summer_School-Epigraphik
 
-Released under [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/), Max Grüntgens (ADWL Mainz), Thomas Kollatz (Steinheim Institut)
+Released under [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/), Max Grüntgens (ADWL Mainz), Thomas Kollatz (ADWL Mainz | Steinheim Institut)
