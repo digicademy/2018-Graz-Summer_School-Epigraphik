@@ -135,6 +135,11 @@ span.attribute, span.attribute span.php {
   color: #d19a66 !important;
 }
 
+span.attribute a.tei-doc-link, span.attribute a.tei-doc-link span.php {
+  font-weight: bolder;
+  color: #d19a66 !important;
+}
+
 code.tei-doc-link {
   color: #abb2bf;
   background-color: #282c34 !important;
