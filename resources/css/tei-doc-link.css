@@ -56,6 +56,10 @@ span.element a.tei-doc-link:hover {
   color: #ea9198;
 }
 
+span.comment-string {
+  color: #778899 !important;
+}
+
 span.comment-string span.hljs-comment {
   color: #778899 !important;
 }

@@ -1,8 +1,10 @@
+if (typeof TEI_DOC_LINK === 'undefined') TEI_DOC_LINK = `xml tei-doc-link`;
+
+
 const codeList = document.getElementsByClassName(TEI_DOC_LINK);
-console.log(codeList);
-console.log(codeList[0].textContent);
-//codeList[0].textContent = "Blub";
-let count = 0;
+//console.log(codeList);
+//console.log(codeList[0].textContent);
+
 Array.from(codeList)
   .forEach((n) => {
     const text = n.textContent.replace(/</g, "&lt;")
