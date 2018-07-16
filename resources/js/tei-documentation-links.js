@@ -107,7 +107,7 @@ Array.from(codeList)
       const value = p2;
       const regstr = `<span class="attribute">${attribute}</span><span class="delimiters">=</span><span class="value">"${value}"</span>`;
       return regstr;
-    } //'<span class="attribute">$1</span><span class="delimiters">=</span><span class="value">"$2"</span>'
+    }
     const newSnippetAttr = newSnippetEl.replace(regularExpressionAttr, replacer)
 
     const regexCommStr = `(&lt;\!)(.*?)(&gt;)`;
