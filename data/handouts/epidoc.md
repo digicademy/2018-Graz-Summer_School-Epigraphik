@@ -63,7 +63,6 @@ The [TEI header](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/HD.html) pr
 4. the **[revisionDesc](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/HD.html#HD6)**, a **revision history**
   - provide a history of **changes**
   - implements a basic form of **version control**
-5. the **[xenoData](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/HD.html#HD9)**, which allows easy inclusion of **metadata** from non-TEI schemes, f.e. from **[Dublin Core](http://www.dublincore.org/documents/usageguide/elements/)** (DC) or Machine-Readable Cataloging (MARC).
 
 ## TEI Text (in EpiDoc)
 
@@ -132,7 +131,7 @@ A [TEI text](http://www.stoa.org/epidoc/gl/latest/trans-textpart.html) in EpiDoc
 
 ## Realia
 
-- **Persons** or a person's name ought to be encoded with `<persname>`; may include further subdivisions like `<forname>`, `<surname>`
+- **Persons** or a person's name ought to be encoded with `<persName>`; may include further subdivisions like `<forename>`, `<surename>`
 - **Ethnic groups** may be encoded with `<orgName>`
 - **Places** or place names (settlements) may be encoded with `<placeName>`
 - **Geographic features** like mountains and rivers may be encoded with `<geogName>`
