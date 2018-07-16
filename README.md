@@ -6,7 +6,7 @@
 
 #### Language: German
 
-The presentation gives an overview about the basic structure of XML and introduces several technical terms needed to understand and converse about the topic. Further on a bird’s eye view of the TEI P5 as well as of the EpiDoc subset is given. In the context of meta data and of the TEI header the presentation further elaborates on the usage of norm data and authority files and provides a first glimpse of Linked Open Data, SPARQL and See Also Services. The presentation closes with a walkthrough through the basic elements used for text consitution within the EpiDoc subset. Furthermore, the elements and attributes in within the code snippets are linked directly to their respective entries within the TEI documentation to provide easy access to parts of interest for the user.
+The presentation gives an overview about the basic structure of XML and introduces several technical terms needed to understand and converse about the topic. Further on a bird’s eye view of the TEI P5 as well as of the EpiDoc subset is given. In the context of meta data and of the TEI header the presentation further elaborates on the usage of norm data and authority files and provides a first glimpse of Linked Open Data, SPARQL and See Also Services. The presentation closes with a walkthrough through the basic elements used for text constitution within the EpiDoc subset. Furthermore, the elements and attributes in within the code snippets are linked directly to their respective entries within the TEI documentation to provide easy access to parts of interest for the user.
 
 Folien: https://digicademy.github.io/2018-Graz-Summer_School-Epigraphik
 
