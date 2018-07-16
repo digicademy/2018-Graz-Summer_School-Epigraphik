@@ -102,6 +102,7 @@ Array.from(codeList)
         "given": "certainty",
         "degree": "certainty",
       };
+      //console.log(Object.keys(tei_attributes));
       let attribute = p1;
       if (attribute in tei_attributes) {
         attribute = `<a class='tei-doc-link' href='http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-${tei_attributes[attribute]}.html'>${attribute}</a>`
