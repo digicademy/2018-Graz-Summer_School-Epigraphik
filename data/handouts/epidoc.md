@@ -9,8 +9,7 @@ title:
 - A Very Short Introduction to TEI EpiDoc
 subtitle:
 - EAJS Winter School \linebreak Digital Humanities and Jewish Epigraphy \linebreak Utrecht, the Netherlands
-date:
-- 19.–21.2.2018
+
 abstract:
 - The paper aims to provide a concise overview to the purpose as well as to the practice of standardized encoding in regard to Humanities sources and data provided by the Text Encoding Initiative (TEI). For the purpose of conciseness as well as clarity – and in concordance with the major topic of the winter school being on history and epigraphy – the paper lays its focus on the TEI subset known as EpiDoc (epigraphic documents). The paper exemplifies the basic structure of a TEI EpiDoc document. It also states best practices in regard to the implementation of the metadata header as well as to the structure of the document body, that incorporates one or more transcription sections and various descriptive as well as interpretative scholarly text sections. There are parts dedicated to the encoding of the process of text constitution, of the most common types of realia (people, places) as well as of various structural and linguistic entities, that may be regarded as semantically more neutral. The paper closes with a troubleshooting section to provide the user with a methodical approach for the  solving of difficult textual phenomena, that she may encounter during the encoding.\newline You may find the _[slides here (https://digicademy.github.io/2018_EAJS_WS_1/#/step-1)](https://digicademy.github.io/2018_EAJS_WS_1/#/step-1)_.
 institute: [Digitale Akademie der Akademie der Wis senschaften und der Literatur | Mainz, Salomon Ludwig Steinheim-Institut für deutsch-jüdische Geschichte e. V. ]
