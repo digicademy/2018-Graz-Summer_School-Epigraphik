@@ -1,3 +1,4 @@
+// @see https://github.com/hou2zi0/tei-doc-link
 if (typeof TEI_DOC_LINK === 'undefined') TEI_DOC_LINK = `xml tei-doc-link`;
 
 
@@ -9,13 +10,17 @@ Array.from(codeList)
   .forEach((n) => {
     const text = n.textContent.replace(/</g, "&lt;")
       .replace(/>/g, "&gt;");
+
+    // ELEMENT NAMES
     const regexEl = `&lt;(\/{0,1})([-A-Za-z:]*?)(\\s.*?.*?){0,1}(\/{0,1})&gt;`;
     const regularExpressionEl = new RegExp(regexEl, 'g');
     const newSnippetEl = text.replace(regularExpressionEl, "<span class='delimiters'>&lt;$1</span><span class='element'><a class='tei-doc-link' href='http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-$2.html'>$2</a>$3</span><span class='delimiters'>$4&gt;</span>");
 
+    // ATTRIBUTES & VALUES
     const regexAttr = `([-A-Za-z:]*?)="(.*?)"`;
     const regularExpressionAttr = new RegExp(regexAttr, 'g');
 
+    // Replace function for RegEx maps attribute names to respective TEI documentation pages
     function replacer(match, p1, p2) {
       const tei_attributes = {
         "type": "att.typed",
@@ -102,10 +107,9 @@ Array.from(codeList)
         "given": "certainty",
         "degree": "certainty",
       };
-      //console.log(Object.keys(tei_attributes));
       let attribute = p1;
       if (attribute in tei_attributes) {
-        attribute = `<a class='tei-doc-link' href='http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-${tei_attributes[attribute]}.html'>${attribute}</a>`
+        attribute = `<a class='tei-doc-link' href='http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-${tei_attributes[attribute]}.html#tei_att.${attribute.replace(':','-')}'>${attribute}</a>`
       }
       const value = p2;
       const regstr = `<span class="attribute">${attribute}</span><span class="delimiters">=</span><span class="value">"${value}"</span>`;
@@ -113,6 +117,7 @@ Array.from(codeList)
     }
     const newSnippetAttr = newSnippetEl.replace(regularExpressionAttr, replacer)
 
+    // COMMENT STRINGS
     const regexCommStr = `(&lt;\!)(.*?)(&gt;)`;
     const regularExpressionCommStr = new RegExp(regexCommStr, 'g');
     const newSnippetCommStr = newSnippetAttr.replace(regularExpressionCommStr, '<span class="comment-string">$1$2$3</span>')
