@@ -75,6 +75,12 @@
       white-space: pre-wrap !important;
       word-wrap: break-word !important;
     } */
+
+    pre code {
+      color: grey;
+      font-size: 0.7em;
+      line-height: normal;
+    }
   </style>
 </head>
 
@@ -440,10 +446,8 @@
         <h2>Schemavalidierung</h2>
         <h4><code class="xml tei-doc-link">&lt;? … ?&gt;</code></h4>
         <pre><code class="xml tei-doc-link">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
-&lt;?xml-model href="http://www.stoa.org/epidoc/schema/latest/tei-epidoc.rng"
-    schematypens="http://relaxng.org/ns/structure/1.0"?&gt;
-&lt;?xml-model href="http://www.stoa.org/epidoc/schema/latest/tei-epidoc.rng"
-    schematypens="http://purl.oclc.org/dsdl/schematron"?&gt;
+&lt;?xml-model href="http://www.stoa.org/epidoc/schema/latest/tei-epidoc.rng" schematypens="http://relaxng.org/ns/structure/1.0"?&gt;
+&lt;?xml-model href="http://www.stoa.org/epidoc/schema/latest/tei-epidoc.rng" schematypens="http://purl.oclc.org/dsdl/schematron"?&gt;
 </code></pre>
         <blockquote><code class="red">/schema/latest</code> – validiert gegen das aktuellste Schema <br /><code class="red">/schema/9.0</code> – validiert gegen das versionierte Schema (Release)</blockquote>
       </div>
