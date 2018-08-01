@@ -81,6 +81,10 @@
       font-size: 0.7em;
       line-height: normal;
     }
+
+    .numbering {
+      width: 1em !important;
+    }
   </style>
 </head>
 
@@ -188,7 +192,7 @@
       <blockquote>
         <span class="red smallcaps">Elemente</span> (aka “tags”): <code class="xml tei-doc-link">&lt;element&gt;</code>
       </blockquote>
-      <pre><code class="xml tei-doc-link">&lt;correspDesc&gt;
+      <pre><code class="xml tei-doc-link linenumbers">&lt;correspDesc&gt;
 ‖      &lt;correspAction&gt;
 ‖      |  &lt;persName&gt;
 ‖      |  ¦  &lt;forename&gt;Max&lt;/forename&gt;
@@ -1336,7 +1340,7 @@ Places &amp; Persons:
   <!-- highlight -->
   <script src="vendor/highlight/highlight.pack-9.3.0.js"></script>
   <script>
-    //hljs.initHighlightingOnLoad();
+    hljs.initHighlightingOnLoad();
   </script>
   <script src="resources/js/hljs.linenumbering.js"></script>
   <!-- swiper -->
@@ -1364,7 +1368,7 @@ Places &amp; Persons:
   </script>
   <script>
     const TEI_DOC_LINK_CONFIG = {
-      "lineNumbering": true
+      "lineNumbering": false
     };
   </script>
   <!--
