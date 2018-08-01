@@ -220,7 +220,7 @@
       <blockquote><span class="red smallcaps">Attribute</span>
         <code class="xml tei-doc-link">&lt;element
           attribut=&quot;attributwert&quot;&gt;</code></blockquote>
-      <pre><code class="xml tei-doc-link">&lt;correspDesc xml:id="unique_letter_id"&gt;
+      <pre><code class="xml tei-doc-link linenumbers">&lt;correspDesc xml:id="unique_letter_id"&gt;
   &lt;correspAction  type="sent"&gt;
      &lt;persName xml:lang="de" ref="http://d-nb.info/gnd/118540238"&gt;
         &lt;forename&gt;Max&lt;/forename&gt;
@@ -243,7 +243,7 @@
         <span class="red smallcaps">Leere Elemente</span>
         <code class="xml tei-doc-link">&lt;element /&gt;</code>
       </blockquote>
-      <pre><code class="xml tei-doc-link">&lt;lb/&gt; Lorem ipsum
+      <pre><code class="xml tei-doc-link linenumbers">&lt;lb/&gt; Lorem ipsum
 &lt;lb/&gt; dolor sit
 &lt;lb/&gt; adipiscit &lt;handShift/&gt;quid
 &lt;lb/&gt; paretur
@@ -461,7 +461,7 @@
         <h2 class="red">Struktur</h2>
         <h2>Metadaten – Bilddaten – Textdaten</h2>
         <pre>
-<code class="xml tei-doc-link">&lt;TEI xmlns="http://www.tei-c.org/ns/1.0" xml:space="preserve" xml:lang="en"&gt;
+<code class="xml tei-doc-link linenumbers">&lt;TEI xmlns="http://www.tei-c.org/ns/1.0" xml:space="preserve" xml:lang="en"&gt;
    &lt;teiHeader&gt;
      &lt;!-- Metadaten --&gt;
    &lt;/teiHeader&gt;
@@ -616,7 +616,7 @@ LIMIT 100
       <h4><code class="xml tei-doc-link">&lt;teiHeader&gt;</code> – Pflichtelemente </h4>
       <div>
         <pre>
-<code class="xml tei-doc-link">&lt;teiHeader&gt;
+<code class="xml tei-doc-link linenumbers">&lt;teiHeader&gt;
    &lt;fileDesc&gt;             &lt;!-- mögl. vollständige Beschreibung der Datei --&gt;
         &lt;titleStmt/&gt;       &lt;!-- Titel der Datei --&gt;
         &lt;publicationStmt/&gt; &lt;!-- Herausgeber und Bereitsteller der Datei --&gt;
@@ -748,7 +748,7 @@ LIMIT 100
         <h2 class="red">Textdaten – Edition III</h2>
         <h4>Beispiel</h4>
         <pre>
-<code class="xml tei-doc-link">&lt;TEI&gt; &lt;!-- Header, Facsimile --&gt;
+<code class="xml tei-doc-link linenumbers">&lt;TEI&gt; &lt;!-- Header, Facsimile --&gt;
   &lt;text&gt;
    &lt;body&gt;
        &lt;div type="edition"&gt;
@@ -784,7 +784,7 @@ LIMIT 100
         <h2 class="red">Textdaten – Edition IV</h2>
         <h4>Beispiel</h4>
         <pre>
-<code class="xml tei-doc-link">&lt;TEI&gt; &lt;!-- Header, Facsimile --&gt;
+<code class="xml tei-doc-link linenumbers">&lt;TEI&gt; &lt;!-- Header, Facsimile --&gt;
   &lt;text&gt;
     &lt;body&gt;
        &lt;div type="edition"&gt;
@@ -820,7 +820,7 @@ LIMIT 100
         <h2 class="red">Textkonstitution I</h2>
         <h4>Graphischer Befund</h4>
         <pre>
-<code class="xml tei-doc-link">Unclear:
+<code class="xml tei-doc-link linenumbers">Unclear:
     &lt;unclear&gt;lor&lt;/unclear&gt;em
 
 Supraline:
@@ -854,7 +854,7 @@ Added below:
         <h2 class="red">Textkonstitution II</h2>
         <h4>Editorische Hinzufügungen</h4>
         <pre>
-<code class="xml tei-doc-link">Supplied (lost):
+<code class="xml tei-doc-link linenumbers">Supplied (lost):
     &lt;supplied reason="lost"&gt;γδ&lt;/supplied&gt;
 
 Supplied (lost, low certainty):
@@ -880,7 +880,7 @@ Supplied (previous editor):
         <h2 class="red">Textkonstitution IIIa</h2>
         <h4>Lacunae I</h4>
         <pre>
-<code class="xml tei-doc-link">Gap or lacuna (lost, character):
+<code class="xml tei-doc-link linenumbers">Gap or lacuna (lost, character):
     &lt;gap reason="lost" quantity="15" unit="character"/&gt;
 
 Gap or lacuna (lost, unknown, character):
@@ -906,7 +906,7 @@ Gap (lost, unknown, line):
         <h2 class="red">Textkonstitution IIIb</h2>
         <h4>Lacunae II</h4>
         <pre>
-<code class="xml tei-doc-link">Gap (possibly lost, line):
+<code class="xml tei-doc-link linenumbers">Gap (possibly lost, line):
     &lt;gap reason="lost" quantity="1" unit="line"&gt;
       &lt;certainty match=".." locus="name"/&gt;
     &lt;/gap&gt;
@@ -933,7 +933,7 @@ Gap (illegible, character):
         <h2 class="red">Textkonstitution IV</h2>
         <h4>Editorische Eingriffe</h4>
         <pre>
-<code class="xml tei-doc-link">Words omitted by editor for brevity:
+<code class="xml tei-doc-link linenumbers">Words omitted by editor for brevity:
     &lt;gap reason="ellipsis"/&gt;
 
 Superfluous letters:
@@ -962,7 +962,7 @@ Regularized by editor:
         <h2 class="red">Textkonstitution V</h2>
         <h4>Auflösung von Kürzungen</h4>
         <pre>
-<code class="xml tei-doc-link">Expansion of abbreviation:
+<code class="xml tei-doc-link linenumbers">Expansion of abbreviation:
     &lt;expan&gt;
       &lt;abbr&gt;α&lt;/abbr&gt;
       &lt;ex&gt;βγ&lt;/ex&gt;
@@ -993,7 +993,7 @@ Expansion of symbol:
         <h2 class="red">Textkonstitution VI</h2>
         <h4>Leerstellen, Zahlen, Zahlzeichen, Symbole</h4>
         <pre>
-<code class="xml tei-doc-link">Note:
+<code class="xml tei-doc-link linenumbers">Note:
     &lt;note&gt;!&lt;/note&gt;, &lt;note&gt;sic&lt;/note&gt;, &lt;note&gt;e.g.&lt;/note&gt;
 
 Space left on stone:
@@ -1022,7 +1022,7 @@ Symbol:
         <h2 class="red">Textkonstitution VII</h2>
         <h4>Interpunktion, Segmente, Wörter, Wortzeichen</h4>
         <pre>
-<code class="xml tei-doc-link">Punctuation (“offene” Semantik):
+<code class="xml tei-doc-link linenumbers">Punctuation (“offene” Semantik):
     &lt;g type="punctuation" subtype="word_separator"/&gt;
 
 Punctuation (“geschlossene” Semantik):
